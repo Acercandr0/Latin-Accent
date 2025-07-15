@@ -1,0 +1,123 @@
+:root {
+  --tabpanel-background-color: transparent !important;
+  --chrome-content-separator-color: transparent !important;
+  --toolbar-bgcolor: transparent !important;
+  --tab-selected-bgcolor: rgba(0, 0, 0, 0.3) !important;
+  --focus-outline-color: color-mix(in srgb, AccentColor 100%, transparent) !important;
+  --toolbarbutton-icon-fill-attention: color-mix(in srgb, AccentColor 100%, transparent) !important;
+  --arrowpanel-background: rgb(22, 22, 22)  !important;
+  --arrowpanel-border-color: color-mix(in srgb, AccentColor 100%, transparent) !important;
+  --arrowpanel-color: white !important;
+}
+
+#nav-bar {
+  border-top: none !important;
+}
+
+.titlebar-spacer[type="pre-tabs"]{
+  width: 0px !important;
+}
+.titlebar-spacer[type="post-tabs"] {
+  width: 50px !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-background {
+  border: 1px solid color-mix(in srgb, AccentColor 100%, transparent) !important;
+  box-shadow: none !important;
+}
+
+#urlbar[breakout] > #urlbar-background,
+#urlbar-results,
+#urlbar-results .urlbarView,
+#urlbar-results .urlbarView-body,
+#urlbar-results .urlbarView-row {
+  background: transparent !important;
+}
+
+#urlbar[open] > #urlbar-background {
+  background: rgb(22, 22, 22)  !important;
+  border: 1px solid color-mix(in srgb, AccentColor 100%, transparent) !important;
+  box-shadow: none !important;
+}
+
+#urlbar[open] #urlbar-results,
+#urlbar[open] #urlbar-results .urlbarView,
+#urlbar[open] #urlbar-results .urlbarView-body,
+#urlbar[open] #urlbar-results .urlbarView-row {
+  background: transparent !important;
+  box-shadow: none !important;
+  margin-bottom: 1px;
+}
+
+#urlbar-searchmode-switcher {
+  background-color: transparent !important;
+}
+
+#browser {
+  box-shadow: none !important;
+}
+
+#main-window {
+  box-shadow: none !important;
+}
+
+#appcontent {
+  box-shadow: none !important;
+}
+
+#browserContainer {
+  box-shadow: none !important;
+}
+
+#tabbrowser-tabpanels {
+  box-shadow: none !important;
+}
+
+.webRenderCompositor {
+  box-shadow: none !important;
+}
+
+#navigator-toolbox {
+  box-shadow: none !important;
+}
+
+browser[type="content-primary"],
+browser[type="content"],
+.browserContainer,
+.browserStack,
+#webrtcIndicator {
+  box-shadow: none !important;
+}
+
+.tab-content,
+.tab-label-container,
+#TabsToolbar,
+#PersonalToolbar {
+  box-shadow: none !important;
+}
+
+#tabbrowser-tabbox,
+#tabbrowser-arrowscrollbox,
+.tabbrowser-tabs {
+  box-shadow: none !important;
+}
+
+* {
+  box-shadow: none !important;
+  filter: none !important;
+  -moz-box-shadow: none !important;
+}
+
+#content,
+#content > * {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+#identity-box {
+  display: none !important;
+}
+
+#tracking-protection-icon-container {
+   margin-right: 5px !important;
+ }

@@ -1,0 +1,42 @@
+@-moz-document url(about:newtab), url("about:home") {
+    
+    html, body {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+    }
+    
+    .top-site-outer .tile,
+    .newtab-activity-outer .activity-inner-box {
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        filter: none !important;
+        border: none !important;
+    }
+    
+    .top-site-button:hover,
+    .top-site-button:active,
+    .top-site-button:focus,
+    .top-site-outer .tile:hover,
+    .top-site-outer:hover,
+    .newtab-activity-outer .activity-inner-box:hover {
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        filter: none !important;
+        border: none !important;
+    }
+    
+    .top-site-outer .tile-title {
+        color: inherit !important;
+        text-shadow: none !important;
+    }
+    
+    .context-menu-list {
+        background: rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid color-mix(in srgb, AccentColor 100%, transparent) !important;
+        box-shadow: none !important;
+        border-radius: 4px !important;
+    }
+}
