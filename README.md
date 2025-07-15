@@ -15,6 +15,7 @@
 - Minimalist, clean layout
 
 ![Preview 4](./Previews/prev4.png)
+
 ---
 
 ## 🛠 Installation
