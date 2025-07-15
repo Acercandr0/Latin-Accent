@@ -1,6 +1,6 @@
 # Latin Accent 🦊
 
-**Latin Accent** is a custom Firefox theme that enhances your browser with **translucent UI surfaces** and leverages your system’s **accent color** for a sleek, modern look. It's inspired by minimalist design trends while keeping things bold, personal, and responsive across Windows and macOS.
+**Latin Accent** is a custom Firefox theme that enhances your browser with translucent UI surfaces and leverages your system’s **accent color** for a sleek, modern look. It's inspired by minimalist design trends while keeping things bold, personal, and responsive.
 
 ![Preview 1](./Previews/prev1.png)  
 ![Preview 2](./Previews/prev2.png)
@@ -10,7 +10,7 @@
 ## ✨ Features
 
 - Dynamic use of your system **accent color**
-- **Translucent** tabs and UI (Windows/macOS)
+- Translucent tabs and UI
 - Minimalist, clean layout
 
 ![Preview 4](./Previews/prev4.png)
