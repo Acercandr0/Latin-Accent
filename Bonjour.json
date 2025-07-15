@@ -1,0 +1,153 @@
+{
+  "about": {
+    "browser": "firefox",
+    "version": "21.0.1"
+  },
+  "showall": true,
+  "lang": "en",
+  "dark": "system",
+  "favicon": "🦊",
+  "tabtitle": "Hey!",
+  "greeting": "Acercandr0",
+  "pagegap": 0,
+  "pagewidth": 2200,
+  "time": true,
+  "main": true,
+  "dateformat": "auto",
+  "background_blur": 15,
+  "background_bright": 0.8,
+  "background_type": "unsplash",
+  "background_solid": "#222",
+  "quicklinks": false,
+  "syncbookmarks": null,
+  "textShadow": 0,
+  "announcements": "major",
+  "review": -1,
+  "css": "body {\n  background: transparent !important;\n  box-shadow: none !important;\n  border: none !important;\n}\n\nh1.digital {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: flex-end;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n}\n\n.digital-hh-leading-zero,\n.digital-hh,\n.digital-hh-separator,\n.digital-mm-separator,\n.digital-mm,\n.digital-ss {\n  order: 1;\n}\n\n.digital-ampm {\n  order: 2;\n  margin-left: 8px;\n  font-size: 0.5em;\n}",
+  "hide": {
+    "weatherdesc": true,
+    "weathericon": false,
+    "greetings": true
+  },
+  "linkstyle": "medium",
+  "linktitles": true,
+  "linkbackgrounds": false,
+  "linknewtab": false,
+  "linksrow": "9",
+  "linkgroups": {
+    "on": false,
+    "selected": "default",
+    "groups": [
+      "default"
+    ],
+    "pinned": [],
+    "synced": []
+  },
+  "backgrounds": {
+    "type": "files",
+    "fadein": 0,
+    "blur": 0,
+    "bright": 0.2,
+    "frequency": "pause",
+    "color": "#ffffff",
+    "urls": "",
+    "images": "bonjourr-images-daylight",
+    "videos": "bonjourr-videos-daylight",
+    "queries": {},
+    "texture": {
+      "type": "none"
+    }
+  },
+  "clock": {
+    "size": 1.875,
+    "ampm": true,
+    "analog": false,
+    "seconds": false,
+    "ampmlabel": true,
+    "worldclocks": false,
+    "timezone": "auto"
+  },
+  "worldclocks": [],
+  "analogstyle": {
+    "face": "none",
+    "hands": "modern",
+    "shape": "round",
+    "border": "#ffff",
+    "background": "#fff2"
+  },
+  "unsplash": {
+    "every": "hour",
+    "collection": "",
+    "lastCollec": "day"
+  },
+  "weather": {
+    "city": "Bogotá, Bogota D.C. CO",
+    "unit": "metric",
+    "provider": "",
+    "moreinfo": "accu",
+    "forecast": "always",
+    "temperature": "actual",
+    "geolocation": "off"
+  },
+  "notes": {
+    "on": false,
+    "width": 40,
+    "opacity": 0.1,
+    "align": "left"
+  },
+  "searchbar": {
+    "on": false,
+    "opacity": 0.1,
+    "newtab": false,
+    "suggestions": true,
+    "engine": "default",
+    "request": "",
+    "placeholder": ""
+  },
+  "quotes": {
+    "on": true,
+    "type": "stoic",
+    "frequency": "tabs",
+    "author": true,
+    "last": 1752602819533
+  },
+  "font": {
+    "size": "17.7",
+    "family": "Manrope",
+    "system": false,
+    "weightlist": [
+      "200",
+      "300",
+      "400",
+      "500",
+      "600",
+      "700",
+      "800"
+    ],
+    "weight": "400"
+  },
+  "supporters": {
+    "enabled": true,
+    "closed": true,
+    "month": 7
+  },
+  "move": {
+    "selection": "single",
+    "layouts": {
+      "single": {
+        "items": {},
+        "grid": [
+          [
+            "time"
+          ],
+          [
+            "main"
+          ],
+          [
+            "quotes"
+          ]
+        ]
+      }
+    }
+  }
+}
