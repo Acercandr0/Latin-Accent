@@ -6,7 +6,6 @@
 ![Preview 2](./Previews/prev2.png)
 ![Preview 3](./Previews/prev3.png)
 
----
 
 ## ✨ Features
 
@@ -16,7 +15,6 @@
 
 ![Preview 4](./Previews/prev4.png)
 
----
 
 ## 🛠 Installation
 
@@ -28,8 +26,6 @@
    - `userContent.css`
 4. (Optional) Copy `bonjour.json` to use with the Bonjour extension (see below).
 
----
-
 ## ⚙️ Enable Custom CSS in Firefox
 
 Go to `about:config` and set the following preference to **true**:
@@ -40,7 +36,6 @@ toolkit.legacyUserProfileCustomizations.stylesheets
 
 This allows Firefox to load your custom `userChrome.css` and `userContent.css`.
 
----
 
 ## 🪟 Enable Transparency – Windows
 
@@ -59,7 +54,6 @@ Firefox does **not** support true transparency natively. To enable real transluc
 - [**Mica For Everyone**](https://github.com/rocksdanister/mica-for-everyone)  
 - [**Translucent Windows (Windhawk mod)**](https://windhawk.net/mods/translucent-windows)
 
----
 
 ## 🍎 Enable Transparency – macOS
 
@@ -71,7 +65,6 @@ layout.css.backdrop-filter.enabled
 
 macOS handles translucency natively once this is enabled.
 
----
 
 ## 🧪 Optional – Custom New Tab Page with Bonjour
 
@@ -84,7 +77,6 @@ To match the full vibe, install the [**Bonjour**](https://addons.mozilla.org/en-
 3. Select the included `bonjour.json` file.
 4. Your new tab page will now match the Latin Accent aesthetic.
 
----
 
 ## 💬 Notes
 
@@ -92,8 +84,7 @@ To match the full vibe, install the [**Bonjour**](https://addons.mozilla.org/en-
 - Some effects depend on OS-level features (e.g. Mica on Windows 11, vibrancy on macOS).
 - Transparency effects may vary depending on your system theme and hardware acceleration settings.
 
----
 
-## 🧉 Made with cariño by [@Acercandr0](https://github.com/Acercandr0)
+### 🧉 Made with cariño by [@Acercandr0](https://github.com/Acercandr0)
 
 Enjoy it. Fork it. Remix it. Make it yours.
