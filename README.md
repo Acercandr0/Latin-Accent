@@ -48,6 +48,7 @@ In `about:config`, set the following preferences to **true**:
 
 ```
 layout.css.backdrop-filter.enabled
+widget.windows.mica
 gfx.webrender.all
 browser.tabs.allow_transparent_browser
 ```
