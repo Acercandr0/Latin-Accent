@@ -7,12 +7,6 @@
 ![Preview 3](./Previews/prev3.png)
 ![Preview 4](./Previews/prev4.png)
 
-## ✨ Features
-
-- Dynamic use of your system **accent color**
-- Translucent tabs and UI
-- Minimalist, clean layout
-
 ## 🛠 Installation
 
 1. Open `about:profiles` in Firefox.
@@ -62,13 +56,11 @@ To match the full vibe, install the [**Bonjour**](https://addons.mozilla.org/en-
 3. Select the included `bonjour.json` file.
 4. Your new tab page will now match the Latin Accent aesthetic.
 
-
 ## 💬 Notes
 
 - Restart Firefox after installing or editing any styles.
-- Some effects depend on OS-level features (e.g. Mica on Windows 11, vibrancy on macOS).
+- Some effects depend on OS-level features (e.g. Mica on Windows 11)
 - Transparency effects may vary depending on your system theme and hardware acceleration settings.
-
 
 ### 🧉 Made with cariño by [@Acercandr0](https://github.com/Acercandr0)
 
