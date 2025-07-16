@@ -34,7 +34,7 @@ toolkit.legacyUserProfileCustomizations.stylesheets
 This allows Firefox to load your custom `userChrome.css` and `userContent.css`.
 
 
-## 🪟 Enable Transparency – Windows
+## 🪟 Enable Transparency
 
 In `about:config`, set the following preferences to **true**:
 
