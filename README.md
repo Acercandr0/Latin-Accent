@@ -5,16 +5,13 @@
 ![Preview 1](./Previews/prev1.png)  
 ![Preview 2](./Previews/prev2.png)
 ![Preview 3](./Previews/prev3.png)
-
+![Preview 4](./Previews/prev4.png)
 
 ## ✨ Features
 
 - Dynamic use of your system **accent color**
 - Translucent tabs and UI
 - Minimalist, clean layout
-
-![Preview 4](./Previews/prev4.png)
-
 
 ## 🛠 Installation
 
