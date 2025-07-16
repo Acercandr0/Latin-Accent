@@ -1,6 +1,6 @@
 # Latin Accent 🦊
 
-**Latin Accent** is a custom Firefox theme that enhances your browser with translucent UI surfaces and leverages your system’s **accent color** for a sleek, modern look. It's inspired by minimalist design trends while keeping things bold, personal, and responsive.
+**Latin Accent** is a custom Firefox theme for Windows that enhances your browser with translucent UI surfaces and leverages your system’s **accent color** for a sleek, modern look. It's inspired by minimalist design trends while keeping things bold, personal, and responsive.
 
 ![Preview 1](./Previews/prev1.png)  
 ![Preview 2](./Previews/prev2.png)
@@ -53,18 +53,6 @@ Firefox does **not** support true transparency natively. To enable real transluc
 
 - [**Mica For Everyone**](https://github.com/rocksdanister/mica-for-everyone)  
 - [**Translucent Windows (Windhawk mod)**](https://windhawk.net/mods/translucent-windows)
-
-
-## 🍎 Enable Transparency – macOS
-
-In `about:config`, set the following preference to **true**:
-
-```
-layout.css.backdrop-filter.enabled
-```
-
-macOS handles translucency natively once this is enabled.
-
 
 ## 🧪 Optional – Custom New Tab Page with Bonjour
 
