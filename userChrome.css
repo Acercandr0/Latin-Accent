@@ -114,8 +114,11 @@ browser[type="content"],
   filter: none !important;
 }
 
-#identity-icon-box,
-#identity-permission-box {
+#identity-icon-box label {
+  font-size: 0 !important;
+}
+#identity-permission-box,
+#identity-icon-box {
   background-color: transparent !important;
 }
 
