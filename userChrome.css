@@ -114,8 +114,9 @@ browser[type="content"],
   filter: none !important;
 }
 
-#identity-box {
-  display: none !important;
+#identity-icon-box,
+#identity-permission-box {
+  background-color: transparent !important;
 }
 
 #tracking-protection-icon-container {
