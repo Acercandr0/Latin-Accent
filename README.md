@@ -42,7 +42,7 @@ browser.tabs.allow_transparent_browser
 
 Firefox does **not** support true transparency natively. To enable real translucent effects like in the previews, you'll need to use one of these third-party mods:
 
-- [**Mica For Everyone**](https://github.com/rocksdanister/mica-for-everyone)  
+- [**Mica For Everyone**](https://github.com/MicaForEveryone/MicaForEveryone)  
 - [**Translucent Windows (Windhawk mod)**](https://windhawk.net/mods/translucent-windows)
 
 ## 🧪 Optional – Custom New Tab Page with Bonjour
