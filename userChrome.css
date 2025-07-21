@@ -11,19 +11,36 @@
 }
 
 #nav-bar {
-  border-top: none !important;
+  border: none !important;
 }
 
 .titlebar-spacer[type="pre-tabs"]{
-  width: 0px !important;
+display: none !important;
+
 }
 .titlebar-spacer[type="post-tabs"] {
-  width: 50px !important;
+  width: 40px !important;
 }
 
 .tabbrowser-tab[selected="true"] .tab-background {
   border: 1px solid color-mix(in srgb, AccentColor 100%, transparent) !important;
   box-shadow: none !important;
+}
+
+.tabbrowser-tab:not([selected]) .tab-icon-image {
+    opacity: 0.3 !important;
+}
+
+.tabbrowser-tab .tab-close-button {
+    visibility: hidden !important;
+}
+
+.tabbrowser-tab:hover .tab-close-button {
+    visibility: visible !important;
+}
+
+.tabbrowser-tab:hover .tab-text {
+    opacity: 1.0 !important;
 }
 
 #urlbar[breakout] > #urlbar-background,
@@ -117,6 +134,7 @@ browser[type="content"],
 #identity-icon-box label {
   font-size: 0 !important;
 }
+
 #identity-permission-box,
 #identity-icon-box {
   background-color: transparent !important;
