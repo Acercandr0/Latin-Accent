@@ -16,39 +16,41 @@ BACKGROUNDS & COLORS
 /* =======================
 NO BORDERS, NO SHADOWS
 ======================= */
-:where(#main-window,
-#navigator-toolbox,
-#nav-bar,
-#TabsToolbar,
-#PersonalToolbar,
-#urlbar,
-#urlbar-background,
-#urlbar-container,
-#urlbar[open] > #urlbar-background,
-#urlbar-results,
-#urlbar-results .urlbarView,
-#urlbar-results .urlbarView-body,
-#urlbar-results .urlbarView-row,
-#browser,
-#appcontent,
-#browserContainer,
-#tabbrowser-tabpanels,
-.webRenderCompositor,
-.tab-content,
-.tab-label-container,
-#tabbrowser-tabbox,
-#tabbrowser-arrowscrollbox,
-.tabbrowser-tabs,
-#content,
-#content > *,
-.browserContainer,
-.browserStack,
-#webrtcIndicator) {
+:where(
+  #main-window,
+  #navigator-toolbox,
+  #nav-bar,
+  #TabsToolbar,
+  #PersonalToolbar,
+  #urlbar,
+  #urlbar-background,
+  #urlbar-container,
+  #urlbar[open] > #urlbar-background,
+  #urlbar-results,
+  #urlbar-results .urlbarView,
+  #urlbar-results .urlbarView-body,
+  #urlbar-results .urlbarView-row,
+  #browser,
+  #appcontent,
+  #browserContainer,
+  #tabbrowser-tabpanels,
+  .webRenderCompositor,
+  .tab-content,
+  .tab-label-container,
+  #tabbrowser-tabbox,
+  #tabbrowser-arrowscrollbox,
+  .tabbrowser-tabs,
+  #content,
+  #content > *,
+  .browserContainer,
+  .browserStack,
+  #webrtcIndicator
+) {
   box-shadow: none !important;
   border: none !important;
-  filter: none !important;
 }
 
+/* Arrow panel appearance */
 panel[arrowpanel] {
   background-color: var(--arrowpanel-background) !important;
   border: 1px solid var(--arrowpanel-border-color) !important;
@@ -68,7 +70,6 @@ TABS
 
 .tabbrowser-tab[selected="true"] .tab-background {
   border: 1px solid color-mix(in srgb, AccentColor 100%, transparent) !important;
-  box-shadow: none !important;
 }
 
 .tabbrowser-tab:not([selected]) .tab-icon-image {
@@ -84,11 +85,11 @@ TABS
 }
 
 .tabbrowser-tab:hover .tab-text {
-  opacity: 1.0 !important;
+  opacity: 1 !important;
 }
 
 /* =======================
-URLBAR
+URLBAR STRUCTURE
 ======================= */
 #urlbar[breakout] > #urlbar-background,
 #urlbar-results,
@@ -102,7 +103,6 @@ URLBAR
   background: rgb(22, 22, 22) !important;
   border-radius: 10px !important;
   border: 1px solid color-mix(in srgb, AccentColor 100%, transparent) !important;
-  box-shadow: none !important;
 }
 
 #urlbar[open] #urlbar-results,
@@ -110,7 +110,6 @@ URLBAR
 #urlbar[open] #urlbar-results .urlbarView-body,
 #urlbar[open] #urlbar-results .urlbarView-row {
   background: transparent !important;
-  box-shadow: none !important;
   border-radius: 7px !important;
   margin-bottom: 1px;
 }
@@ -120,56 +119,48 @@ URLBAR
 }
 
 /* =======================
-URLBAR ICONS
+URLBAR BUTTONS & ICONS
 ======================= */
-#identity-box,
-#tracking-protection-icon-container {
-  background-color: transparent !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out !important;
-}
-
-#urlbar-container:hover #identity-box,
-#urlbar-container:hover #tracking-protection-icon-container,
-#urlbar[open] #identity-box,
-#urlbar[open] #tracking-protection-icon-container {
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-#star-button-box {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out !important;
-}
-
-#urlbar-container:hover #star-button-box,
-#urlbar[open] #star-button-box {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-#identity-icon-box label {
-  display: none !important;
-}
-
+/* Base style for all buttons inside the urlbar */
 #urlbar-container toolbarbutton,
 #urlbar toolbarbutton {
   background: transparent !important;
   box-shadow: none !important;
-  opacity: 0.5 !important;
-  transition: opacity 0.2s ease-in-out !important;
+  opacity: 0.4 !important;
+  transition: background 0.2s ease, opacity 0.2s ease !important;
+  border-radius: 4px;
 }
 
 #urlbar-container toolbarbutton:hover,
-#urlbar toolbarbutton:hover,
-#urlbar[open] toolbarbutton {
+#urlbar toolbarbutton:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
   opacity: 1 !important;
 }
 
+/* Identity and security icons */
+#identity-box,
+#tracking-protection-icon-container,
+#star-button-box {
+  background-color: transparent !important;
+  opacity: 0.4 !important;
+  transition: opacity 0.2s ease, background 0.2s ease !important;
+  border-radius: 4px;
+}
+
+#identity-box:hover,
+#tracking-protection-icon-container:hover,
+#star-button-box:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  opacity: 1 !important;
+}
+
+/* Hide label next to identity icon */
+#identity-icon-box label {
+  display: none !important;
+}
+
 /* =======================
-TOOLBAR BUTTONS
+NAVIGATION TOOLBAR BUTTONS
 ======================= */
 #nav-bar toolbarbutton {
   background: transparent !important;
@@ -183,7 +174,7 @@ TOOLBAR BUTTONS
 }
 
 /* =======================
-URLBAR INPUT
+URLBAR INPUT FIELD
 ======================= */
 .urlbar-input-box {
   display: flex !important;
