@@ -14,50 +14,6 @@ BACKGROUNDS & COLORS
 }
 
 /* =======================
-NO BORDERS, NO SHADOWS
-======================= */
-:where(
-  #main-window,
-  #navigator-toolbox,
-  #nav-bar,
-  #TabsToolbar,
-  #PersonalToolbar,
-  #urlbar,
-  #urlbar-background,
-  #urlbar-container,
-  #urlbar[open] > #urlbar-background,
-  #urlbar-results,
-  #urlbar-results .urlbarView,
-  #urlbar-results .urlbarView-body,
-  #urlbar-results .urlbarView-row,
-  #browser,
-  #appcontent,
-  #browserContainer,
-  #tabbrowser-tabpanels,
-  .webRenderCompositor,
-  .tab-content,
-  .tab-label-container,
-  #tabbrowser-tabbox,
-  #tabbrowser-arrowscrollbox,
-  .tabbrowser-tabs,
-  #content,
-  #content > *,
-  .browserContainer,
-  .browserStack,
-  #webrtcIndicator
-) {
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* Arrow panel appearance */
-panel[arrowpanel] {
-  background-color: var(--arrowpanel-background) !important;
-  border: 1px solid var(--arrowpanel-border-color) !important;
-  color: var(--arrowpanel-color) !important;
-}
-
-/* =======================
 TABS
 ======================= */
 .titlebar-spacer[type="pre-tabs"] {
@@ -101,7 +57,6 @@ URLBAR STRUCTURE
 
 #urlbar[open] > #urlbar-background {
   background: rgb(22, 22, 22) !important;
-  border-radius: 10px !important;
   border: 1px solid color-mix(in srgb, AccentColor 100%, transparent) !important;
 }
 
@@ -110,7 +65,6 @@ URLBAR STRUCTURE
 #urlbar[open] #urlbar-results .urlbarView-body,
 #urlbar[open] #urlbar-results .urlbarView-row {
   background: transparent !important;
-  border-radius: 7px !important;
   margin-bottom: 1px;
 }
 
