@@ -5,7 +5,7 @@
   --tab-selected-bgcolor: rgba(0, 0, 0, 0.3) !important;
   --focus-outline-color: color-mix(in srgb, AccentColor 100%, transparent) !important;
   --toolbarbutton-icon-fill-attention: color-mix(in srgb, AccentColor 100%, transparent) !important;
-  --arrowpanel-background: rgb(22, 22, 22)  !important;
+  --arrowpanel-background: rgb(35, 35, 35) !important;
   --arrowpanel-border-color: color-mix(in srgb, AccentColor 100%, transparent) !important;
   --arrowpanel-color: white !important;
 }
@@ -14,12 +14,16 @@
   border: none !important;
 }
 
-.titlebar-spacer[type="pre-tabs"]{
-display: none !important;
-
+.titlebar-spacer[type="pre-tabs"] {
+  display: none !important;
 }
+
 .titlebar-spacer[type="post-tabs"] {
   width: 40px !important;
+}
+
+.tabbrowser-tab .tab-background {
+  border-radius: 10px !important;
 }
 
 .tabbrowser-tab[selected="true"] .tab-background {
@@ -28,19 +32,19 @@ display: none !important;
 }
 
 .tabbrowser-tab:not([selected]) .tab-icon-image {
-    opacity: 0.3 !important;
+  opacity: 0.2 !important;
 }
 
 .tabbrowser-tab .tab-close-button {
-    visibility: hidden !important;
+  visibility: hidden !important;
 }
 
 .tabbrowser-tab:hover .tab-close-button {
-    visibility: visible !important;
+  visibility: visible !important;
 }
 
 .tabbrowser-tab:hover .tab-text {
-    opacity: 1.0 !important;
+  opacity: 1.0 !important;
 }
 
 #urlbar[breakout] > #urlbar-background,
@@ -49,10 +53,12 @@ display: none !important;
 #urlbar-results .urlbarView-body,
 #urlbar-results .urlbarView-row {
   background: transparent !important;
+  border-radius: 7px !important;
 }
 
 #urlbar[open] > #urlbar-background {
-  background: rgb(22, 22, 22)  !important;
+  background: rgb(22, 22, 22) !important;
+  border-radius: 10px !important;
   border: 1px solid color-mix(in srgb, AccentColor 100%, transparent) !important;
   box-shadow: none !important;
 }
@@ -63,6 +69,7 @@ display: none !important;
 #urlbar[open] #urlbar-results .urlbarView-row {
   background: transparent !important;
   box-shadow: none !important;
+  border-radius: 7px !important;
   margin-bottom: 1px;
 }
 
@@ -122,7 +129,6 @@ browser[type="content"],
 * {
   box-shadow: none !important;
   filter: none !important;
-  -moz-box-shadow: none !important;
 }
 
 #content,
@@ -131,15 +137,24 @@ browser[type="content"],
   filter: none !important;
 }
 
+#forward-button[disabled="true"] {
+  display: none !important;
+}
+
 #identity-icon-box label {
-  font-size: 0 !important;
+  display: none !important;
 }
 
-#identity-permission-box,
-#identity-icon-box {
-  background-color: transparent !important;
-}
-
+#identity-box,
 #tracking-protection-icon-container {
-   margin-right: 5px !important;
- }
+  background-color: transparent !important;
+  visibility: collapse !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out !important;
+}
+
+#urlbar-container:hover #identity-box,
+#urlbar-container:hover #tracking-protection-icon-container {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
