@@ -1,5 +1,5 @@
 /* =======================
-BACKGROUNDS & COLORS
+TOOLBAR & COLORS
 ======================= */
 :root {
   --tabpanel-background-color: transparent !important;
@@ -11,6 +11,25 @@ BACKGROUNDS & COLORS
   --arrowpanel-background: rgb(35, 35, 35) !important;
   --arrowpanel-border-color: color-mix(in srgb, AccentColor 100%, transparent) !important;
   --arrowpanel-color: white !important;
+}
+
+#navigator-toolbox {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#TabsToolbar {
+  border-bottom: none !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+}
+
+#nav-bar {
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 /* =======================
