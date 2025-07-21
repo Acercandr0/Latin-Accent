@@ -22,10 +22,6 @@
   width: 40px !important;
 }
 
-.tabbrowser-tab .tab-background {
-  border-radius: 10px !important;
-}
-
 .tabbrowser-tab[selected="true"] .tab-background {
   border: 1px solid color-mix(in srgb, AccentColor 100%, transparent) !important;
   box-shadow: none !important;
@@ -53,7 +49,6 @@
 #urlbar-results .urlbarView-body,
 #urlbar-results .urlbarView-row {
   background: transparent !important;
-  border-radius: 7px !important;
 }
 
 #urlbar[open] > #urlbar-background {
