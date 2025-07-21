@@ -16,7 +16,7 @@ BACKGROUNDS & COLORS
 /* =======================
 NO BORDERS, NO SHADOWS
 ======================= */
-#main-window,
+:where(#main-window,
 #navigator-toolbox,
 #nav-bar,
 #TabsToolbar,
@@ -43,15 +43,20 @@ NO BORDERS, NO SHADOWS
 #content > *,
 .browserContainer,
 .browserStack,
-#webrtcIndicator,
-* {
+#webrtcIndicator) {
   box-shadow: none !important;
   border: none !important;
   filter: none !important;
 }
 
+panel[arrowpanel] {
+  background-color: var(--arrowpanel-background) !important;
+  border: 1px solid var(--arrowpanel-border-color) !important;
+  color: var(--arrowpanel-color) !important;
+}
+
 /* =======================
-   TABS
+TABS
 ======================= */
 .titlebar-spacer[type="pre-tabs"] {
   display: none !important;
@@ -132,6 +137,7 @@ URLBAR ICONS
   visibility: visible !important;
   opacity: 1 !important;
 }
+
 #star-button-box {
   opacity: 0 !important;
   visibility: hidden !important;
