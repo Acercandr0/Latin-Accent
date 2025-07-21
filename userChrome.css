@@ -1,3 +1,6 @@
+/* =======================
+BACKGROUNDS & COLORS
+======================= */
 :root {
   --tabpanel-background-color: transparent !important;
   --chrome-content-separator-color: transparent !important;
@@ -10,10 +13,46 @@
   --arrowpanel-color: white !important;
 }
 
-#nav-bar {
+/* =======================
+NO BORDERS, NO SHADOWS
+======================= */
+#main-window,
+#navigator-toolbox,
+#nav-bar,
+#TabsToolbar,
+#PersonalToolbar,
+#urlbar,
+#urlbar-background,
+#urlbar-container,
+#urlbar[open] > #urlbar-background,
+#urlbar-results,
+#urlbar-results .urlbarView,
+#urlbar-results .urlbarView-body,
+#urlbar-results .urlbarView-row,
+#browser,
+#appcontent,
+#browserContainer,
+#tabbrowser-tabpanels,
+.webRenderCompositor,
+.tab-content,
+.tab-label-container,
+#tabbrowser-tabbox,
+#tabbrowser-arrowscrollbox,
+.tabbrowser-tabs,
+#content,
+#content > *,
+.browserContainer,
+.browserStack,
+#webrtcIndicator,
+* {
+  box-shadow: none !important;
   border: none !important;
+  filter: none !important;
 }
 
+/* =======================
+   TABS
+======================= */
 .titlebar-spacer[type="pre-tabs"] {
   display: none !important;
 }
@@ -43,6 +82,9 @@
   opacity: 1.0 !important;
 }
 
+/* =======================
+URLBAR
+======================= */
 #urlbar[breakout] > #urlbar-background,
 #urlbar-results,
 #urlbar-results .urlbarView,
@@ -72,84 +114,76 @@
   background-color: transparent !important;
 }
 
-#browser {
-  box-shadow: none !important;
+/* =======================
+URLBAR ICONS
+======================= */
+#identity-box,
+#tracking-protection-icon-container {
+  background-color: transparent !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out !important;
 }
 
-#main-window {
-  box-shadow: none !important;
+#urlbar-container:hover #identity-box,
+#urlbar-container:hover #tracking-protection-icon-container,
+#urlbar[open] #identity-box,
+#urlbar[open] #tracking-protection-icon-container {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+#star-button-box {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out !important;
 }
 
-#appcontent {
-  box-shadow: none !important;
-}
-
-#browserContainer {
-  box-shadow: none !important;
-}
-
-#tabbrowser-tabpanels {
-  box-shadow: none !important;
-}
-
-.webRenderCompositor {
-  box-shadow: none !important;
-}
-
-#navigator-toolbox {
-  box-shadow: none !important;
-}
-
-browser[type="content-primary"],
-browser[type="content"],
-.browserContainer,
-.browserStack,
-#webrtcIndicator {
-  box-shadow: none !important;
-}
-
-.tab-content,
-.tab-label-container,
-#TabsToolbar,
-#PersonalToolbar {
-  box-shadow: none !important;
-}
-
-#tabbrowser-tabbox,
-#tabbrowser-arrowscrollbox,
-.tabbrowser-tabs {
-  box-shadow: none !important;
-}
-
-* {
-  box-shadow: none !important;
-  filter: none !important;
-}
-
-#content,
-#content > * {
-  box-shadow: none !important;
-  filter: none !important;
-}
-
-#forward-button[disabled="true"] {
-  display: none !important;
+#urlbar-container:hover #star-button-box,
+#urlbar[open] #star-button-box {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 #identity-icon-box label {
   display: none !important;
 }
 
-#identity-box,
-#tracking-protection-icon-container {
-  background-color: transparent !important;
-  visibility: collapse !important;
-  opacity: 0 !important;
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out !important;
+#urlbar-container toolbarbutton,
+#urlbar toolbarbutton {
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 0.5 !important;
+  transition: opacity 0.2s ease-in-out !important;
 }
 
-#urlbar-container:hover #identity-box,
-#urlbar-container:hover #tracking-protection-icon-container {
-  visibility: visible !important;
+#urlbar-container toolbarbutton:hover,
+#urlbar toolbarbutton:hover,
+#urlbar[open] toolbarbutton {
   opacity: 1 !important;
+}
+
+/* =======================
+TOOLBAR BUTTONS
+======================= */
+#nav-bar toolbarbutton {
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 0.5 !important;
+  transition: opacity 0.2s ease-in-out !important;
+}
+
+#nav-bar toolbarbutton:hover {
+  opacity: 1 !important;
+}
+
+/* =======================
+URLBAR INPUT
+======================= */
+.urlbar-input-box {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.urlbar-input {
+  text-align: center !important;
 }
