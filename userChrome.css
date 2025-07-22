@@ -1,11 +1,11 @@
 /* =======================
-TOOLBAR & COLORS
+COLORS & VARIABLES
 ======================= */
 :root {
   --tabpanel-background-color: transparent !important;
   --chrome-content-separator-color: transparent !important;
   --toolbar-bgcolor: transparent !important;
-  --tab-selected-bgcolor: rgba(0, 0, 0, 0.3) !important;
+  --tab-selected-bgcolor: rgba(0, 0, 0, 0.2) !important;
   --focus-outline-color: color-mix(in srgb, AccentColor 100%, transparent) !important;
   --toolbarbutton-icon-fill-attention: color-mix(in srgb, AccentColor 100%, transparent) !important;
   --arrowpanel-background: rgb(35, 35, 35) !important;
@@ -13,21 +13,56 @@ TOOLBAR & COLORS
   --arrowpanel-color: white !important;
 }
 
+/* =======================
+GLOBAL OVERRIDES
+======================= */
+* {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+#content,
+#content > * {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* =======================
+MAIN STRUCTURE
+======================= */
+#main-window,
+#browser,
+#appcontent,
+#browserContainer,
+#tabbrowser-tabpanels,
+#tabbrowser-tabbox,
+#tabbrowser-arrowscrollbox,
+.tabbrowser-tabs,
+.webRenderCompositor,
+.browserContainer,
+.browserStack,
+#webrtcIndicator,
+#navigator-toolbox,
+#TabsToolbar,
+#PersonalToolbar {
+  box-shadow: none !important;
+}
+
+/* =======================
+TOOLBAR
+======================= */
 #navigator-toolbox {
   border: none !important;
-  box-shadow: none !important;
 }
 
 #TabsToolbar {
   border-bottom: none !important;
-  box-shadow: none !important;
   margin-bottom: 0 !important;
 }
 
 #nav-bar {
   border-top: none !important;
   border-bottom: none !important;
-  box-shadow: none !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
@@ -47,8 +82,14 @@ TABS
   border: 1px solid color-mix(in srgb, AccentColor 100%, transparent) !important;
 }
 
-.tabbrowser-tab:not([selected]) .tab-icon-image {
-  opacity: 0.2 !important;
+.tabbrowser-tab:not([selected]) .tab-icon-image,
+.tabbrowser-tab:not([selected]) .tab-label,
+#tabs-newtab-button {
+  opacity: 0.15 !important;
+}
+
+#tabs-newtab-button:hover  { 
+opacity: 1 !important;
 }
 
 .tabbrowser-tab .tab-close-button {
@@ -59,7 +100,8 @@ TABS
   visibility: visible !important;
 }
 
-.tabbrowser-tab:hover .tab-text {
+.tabbrowser-tab:hover .tab-text,
+.tabbrowser-tab:hover .tab-icon-image {
   opacity: 1 !important;
 }
 
@@ -94,40 +136,26 @@ URLBAR STRUCTURE
 /* =======================
 URLBAR BUTTONS & ICONS
 ======================= */
-/* Base style for all buttons inside the urlbar */
 #urlbar-container toolbarbutton,
-#urlbar toolbarbutton {
+#urlbar toolbarbutton,
+#identity-permission-box,
+#identity-icon-box,
+#tracking-protection-icon-container,
+#star-button-box {
   background: transparent !important;
-  box-shadow: none !important;
-  opacity: 0.4 !important;
-  transition: background 0.2s ease, opacity 0.2s ease !important;
-  border-radius: 4px;
+  opacity: 0.15 !important;
 }
 
 #urlbar-container toolbarbutton:hover,
-#urlbar toolbarbutton:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  opacity: 1 !important;
-}
-
-/* Identity and security icons */
-#identity-box,
-#tracking-protection-icon-container,
-#star-button-box {
-  background-color: transparent !important;
-  opacity: 0.4 !important;
-  transition: opacity 0.2s ease, background 0.2s ease !important;
-  border-radius: 4px;
-}
-
-#identity-box:hover,
+#urlbar toolbarbutton:hover,
+#identity-permission-box:hover,
+#identity-icon-box:hover,
 #tracking-protection-icon-container:hover,
 #star-button-box:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background: var(--toolbarbutton-background-hover) !important;
   opacity: 1 !important;
 }
 
-/* Hide label next to identity icon */
 #identity-icon-box label {
   display: none !important;
 }
@@ -137,13 +165,17 @@ NAVIGATION TOOLBAR BUTTONS
 ======================= */
 #nav-bar toolbarbutton {
   background: transparent !important;
-  box-shadow: none !important;
-  opacity: 0.5 !important;
-  transition: opacity 0.2s ease-in-out !important;
+  opacity: 0.15 !important;
+  transition: opacity 0.15s ease-in-out !important;
 }
 
 #nav-bar toolbarbutton:hover {
   opacity: 1 !important;
+}
+
+/* Hide the 'forward' button when no forward history exists */
+#forward-button[disabled="true"] {
+  display: none !important;
 }
 
 /* =======================
