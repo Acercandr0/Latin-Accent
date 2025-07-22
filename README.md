@@ -16,7 +16,7 @@
    It must contain:
    - `userChrome.css`
    - `userContent.css`
-4. (Optional) Copy `bonjour.json` to use with the Bonjour extension (see below).
+4. (Optional) Copy `bonjour.css` to use with the Bonjour extension (see below).
 
 ## ⚙️ Enable Custom CSS in Firefox
 
@@ -53,9 +53,10 @@ To match the full vibe, install the [**Bonjour**](https://addons.mozilla.org/en-
 ### Steps:
 
 1. Install the **Bonjour** extension from Mozilla Add-ons.
-2. Open Bonjour's settings → click **"Import Config"**.
-3. Select the included `bonjour.json` file.
-4. Your new tab page will now match the Latin Accent aesthetic.
+2. Open Bonjour's settings → click **"Show all settings"**.
+3. Copy the content of `bonjour.css`.
+4. Paste it on Custom Style section. 
+5. Your new tab page will now match the Latin Accent aesthetic.
 
 ## 💬 Notes
 
