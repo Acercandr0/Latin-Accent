@@ -118,7 +118,7 @@ URLBAR STRUCTURE
 }
 
 #urlbar[open] > #urlbar-background {
-  background: rgb(22, 22, 22) !important;
+  background: rgb(35, 35, 35) !important;
   border: 1px solid color-mix(in srgb, AccentColor 100%, transparent) !important;
 }
 
