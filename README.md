@@ -16,7 +16,6 @@
    It must contain:
    - `userChrome.css`
    - `userContent.css`
-4. (Optional) Copy `bonjour.css` to use with the Bonjour extension (see below).
 
 ## ⚙️ Enable Custom CSS in Firefox
 
