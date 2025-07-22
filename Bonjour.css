@@ -1,0 +1,32 @@
+body {
+  background: transparent !important;
+}
+
+h1.digital {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.digital-hh-leading-zero,
+.digital-hh,
+.digital-hh-separator,
+.digital-mm-separator,
+.digital-mm,
+.digital-ss {
+  order: 1;
+}
+
+.digital-ampm {
+  order: 2;
+  margin-left: 8px;
+  font-size: 0.5em;
+}
+
+#show-settings img {
+	font-size: 10px;
+}
