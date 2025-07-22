@@ -7,6 +7,7 @@ COLORS & VARIABLES
   --toolbar-bgcolor: transparent !important;
   --tab-selected-bgcolor: rgba(0, 0, 0, 0.2) !important;
   --focus-outline-color: color-mix(in srgb, AccentColor 100%, transparent) !important;
+  --focus-outline-width: 1px !important;
   --toolbarbutton-icon-fill-attention: color-mix(in srgb, AccentColor 100%, transparent) !important;
   --arrowpanel-background: rgb(35, 35, 35) !important;
   --arrowpanel-border-color: color-mix(in srgb, AccentColor 100%, transparent) !important;
