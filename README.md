@@ -6,6 +6,7 @@
 ![Preview 2](./Previews/prev2.png)
 ![Preview 3](./Previews/prev3.png)
 ![Preview 4](./Previews/prev4.png)
+![Preview 5](./Previews/prev5.png)
 
 ## 🛠 Installation
 
