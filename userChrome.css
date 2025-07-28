@@ -58,7 +58,6 @@
 
 /* =======================
    TOOLBAR STRUCTURE
-   Clean toolbar appearance
    ======================= */
 #navigator-toolbox,
 #TabsToolbar,
@@ -69,7 +68,6 @@
 
 /* =======================
    TAB SYSTEM
-   Modern tab styling with transparency
    ======================= */
 
 /* Tab spacing and layout */
@@ -88,7 +86,7 @@
   border-radius: var(--border-radius) !important;
 }
 
-/* Inactive tabs and new tab button - low opacity by default */
+/* Inactive tabs and new tab button */
 .tabbrowser-tab:not([selected]) .tab-icon-image,
 .tabbrowser-tab:not([selected]) .tab-label,
 #tabs-newtab-button {
@@ -125,7 +123,6 @@
 
 /* =======================
    URL BAR SYSTEM
-   Dynamic address bar with transparency
    ======================= */
 
 /* Closed state - fully transparent */
@@ -222,7 +219,6 @@ moz-button:not(.tools-overflow),
 
 /* =======================
    HOVER EFFECTS
-   Unified hover behavior across all elements
    ======================= */
 
 /* General button hover */
@@ -278,8 +274,8 @@ moz-button:not(.tools-overflow):hover,
   display: none !important;
 }
 
-/* Hide disabled forward button */
-#forward-button[disabled="true"] {
+/* Hide sidebar splitter */
+#sidebar-tools-and-extensions-splitter {
   display: none !important;
 }
 
@@ -314,7 +310,6 @@ moz-button:not(.tools-overflow):hover,
 
 /* =======================
    ANIMATIONS & EFFECTS
-   Modern UI enhancements
    ======================= */
 
 /* Dropdown slide animation */
