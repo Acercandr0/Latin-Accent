@@ -297,7 +297,8 @@ toolbarpaletteitem > toolbarbutton,
 #appMenu-button,
 #PanelUI-menu-button,
 #sidebar-switcher-target toolbarbutton,
-.toolbarbutton-1 {
+.toolbarbutton-1,
+.button-background {
   background-color: transparent !important;
   background-image: none !important;
   background: transparent !important;
@@ -324,7 +325,8 @@ toolbarpaletteitem > toolbarbutton,
 #PanelUI-menu-button:hover,
 #sidebar-switcher-target toolbarbutton:hover,
 .toolbarbutton-1:hover,
-.toolbarbutton-1:hover:active {
+.toolbarbutton-1:hover:active,
+.button-background:hover {
   background-color: transparent !important;
   background-image: none !important;
   background: transparent !important;
@@ -415,6 +417,12 @@ toolbarpaletteitem > toolbarbutton:hover image,
 .panel-subview-footer-button:hover image {
   fill: var(--accent-color) !important;
   filter: none !important;
+}
+
+.button-background:hover {
+  & img {
+    fill: var(--accent-color) !important;
+}
 }
 
 /* 🌟 SPECIAL STATES */
