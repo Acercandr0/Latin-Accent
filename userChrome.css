@@ -24,8 +24,8 @@
   --transition-quick: all 0.15s ease-out !important;
   
   /* 📐 Layout Constants */
-  --border-radius: 6px;
-  --border-radius-large: 8px;
+  --border-radius: 5px;
+  --border-radius-large: 7px;
   
   /* 🎨 Interface Colors */
   --panel-bg: rgba(43, 43, 43, 0.98) !important;
