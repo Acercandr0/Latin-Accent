@@ -1,39 +1,54 @@
-/* =======================
+/* ===================================================================
    LATIN ACCENT - FIREFOX DARK & TRANSPARENT THEME
    Made with cariño by Acercandr0
-   ======================= */
+   =================================================================== */
 
 :root {
-  /* Core transparency settings */
+  /* 🎯 Core Transparency */
   --tabpanel-background-color: transparent !important;
   --chrome-content-separator-color: transparent !important;
   --toolbar-bgcolor: transparent !important;
   
-  /* Dynamic accent color system */
+  /* 🌈 Dynamic Color System */
   --accent-color: color-mix(in srgb, AccentColor 100%, transparent) !important;
+  --accent-color-subtle: color-mix(in srgb, AccentColor 30%, transparent) !important;
   
-  /* Animation and styling constants */
+  /* 👻 Opacity System */
   --inactive-opacity: 0.3 !important;
-  --hover-transition: all 0.3s cubic-bezier(0.5, 0, 0.3, 1);
+  --hover-opacity: 1 !important;
+  --semi-opacity: 0.7 !important;
+  
+  /* ⚡ Animation System */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  --transition-quick: all 0.15s ease-out !important;
+  
+  /* 📐 Layout Constants */
   --border-radius: 6px;
-
-  /* Focus and interaction states */
+  --border-radius-large: 8px;
+  
+  /* 🎨 Interface Colors */
+  --panel-bg: rgba(43, 43, 43, 0.95) !important;
+  --panel-border: var(--accent-color) !important;
+  --panel-text: white !important;
+  --hover-bg: rgba(255, 255, 255, 0.08) !important;
+  
+  /* 🔍 Focus System */
   --focus-outline-color: var(--accent-color) !important;
   --focus-outline-width: 1px !important;
   --toolbarbutton-icon-fill-attention: var(--accent-color) !important;
   
-  /* Dropdown and panel styling */
-  --arrowpanel-background: rgb(50, 50, 50) !important;
-  --arrowpanel-border-color: var(--accent-color) !important;
-  --arrowpanel-color: white !important;
-  --urlbar-open-background: rgb(50, 50, 50) !important;
-  --urlbar-open-color: white !important;
+  /* 📋 Dropdown Styling */
+  --arrowpanel-background: var(--panel-bg) !important;
+  --arrowpanel-border-color: var(--panel-border) !important;
+  --arrowpanel-color: var(--panel-text) !important;
+  --urlbar-open-background: var(--panel-bg) !important;
+  --urlbar-open-color: var(--panel-text) !important;
 }
 
-/* =======================
-   GLOBAL RESETS
-   Remove default shadows and filters
-   ======================= */
+/* ===========================
+   🧹 GLOBAL RESETS
+   =========================== */
 *,
 #content,
 #content > *,
@@ -56,21 +71,17 @@
   filter: none !important;
 }
 
-/* =======================
-   TOOLBAR STRUCTURE
-   ======================= */
+/* ===========================
+   📑 TAB SYSTEM
+   =========================== */
+
 #navigator-toolbox,
 #TabsToolbar,
 #nav-bar {
   border: none !important;
-  margin: 0 !important;
 }
 
-/* =======================
-   TAB SYSTEM
-   ======================= */
-
-/* Tab spacing and layout */
+/* Tab Layout */
 .titlebar-spacer[type="pre-tabs"] {
   width: 1px !important;
 }
@@ -79,53 +90,60 @@
   width: 40px !important;
 }
 
-/* Active tab styling */
+/* Base Tab Styling */d
+.tabbrowser-tab {
+  transition: var(--transition-smooth) !important;
+  position: relative;
+}
+
+/* Active Tab */
 .tabbrowser-tab[selected="true"] .tab-background {
   border: 1px solid var(--accent-color) !important;
   background: transparent !important;
   border-radius: var(--border-radius) !important;
+  animation: tabActivate 0.3s ease-out;
 }
 
-/* Inactive tabs and new tab button */
+/* Inactive Tabs */
 .tabbrowser-tab:not([selected]) .tab-icon-image,
 .tabbrowser-tab:not([selected]) .tab-label,
 #tabs-newtab-button {
   opacity: var(--inactive-opacity) !important;
-  transition: var(--hover-transition) !important;
+  transition: var(--transition-smooth) !important;
 }
 
-/* Tab hover effects - reveal on hover */
+/* Tab Hover Effects */
 .tabbrowser-tab:hover .tab-text,
 .tabbrowser-tab:hover .tab-icon-image,
 #tabs-newtab-button:hover {
-  opacity: 1 !important;
+  opacity: var(--hover-opacity) !important;
+  transform: translateY(-1px);
 }
 
-/* Tab close button behavior */
+/* Tab Close Button */
 .tabbrowser-tab .tab-close-button {
+  opacity: 0 !important;
   visibility: hidden !important;
-  transition: var(--hover-transition) !important;
+  transform: scale(0.8) rotate(30deg) !important;
+  transition: var(--transition-bounce) !important;
 }
 
 .tabbrowser-tab:hover .tab-close-button {
+  opacity: var(--semi-opacity) !important;
   visibility: visible !important;
-  opacity: 1 !important;
+  transform: scale(1) rotate(0deg) !important;
 }
 
-.tabbrowser-tab:hover .tab-close-button:hover {
-  opacity: 1 !important;
+.tabbrowser-tab .tab-close-button:hover {
+  opacity: var(--hover-opacity) !important;
+  transform: scale(1.1) !important;
 }
 
-/* Smooth tab transitions */
-.tabbrowser-tab {
-  transition: var(--hover-transition) !important;
-}
+/* ===========================
+   🔍 URL BAR SYSTEM
+   =========================== */
 
-/* =======================
-   URL BAR SYSTEM
-   ======================= */
-
-/* Closed state - fully transparent */
+/* Closed State - Invisible */
 #urlbar[breakout] > #urlbar-background,
 #urlbar-results,
 #urlbar-results .urlbarView,
@@ -134,35 +152,38 @@
   background: transparent !important;
 }
 
-/* Open state - dark background with accent border */
+/* Open State - Elegant Reveal */
 #urlbar[open] > #urlbar-background {
   background: var(--urlbar-open-background) !important;
   color: var(--urlbar-open-color) !important;
   border: 1px solid var(--accent-color) !important;
-  border-radius: var(--border-radius) !important;
+  border-radius: var(--border-radius-large) !important;
   margin: 1px !important;
+  animation: urlbarExpand 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Search results styling */
+/* Search Results */
 #urlbar[open] #urlbar-results,
 #urlbar[open] #urlbar-results .urlbarView,
 #urlbar[open] #urlbar-results .urlbarView-body {
   background: transparent !important;
 }
 
-#urlbar-results .urlbarView-row:hover {
-  background: rgba(255, 255, 255, 0.07) !important;
+#urlbar-results .urlbarView-row {
+  transition: var(--transition-quick) !important;
   border-radius: var(--border-radius) !important;
+}
+
+#urlbar-results .urlbarView-row:hover {
+  background: var(--hover-bg) !important;
+  transform: translateX(4px);
 }
 
 #urlbar-searchmode-switcher {
   background-color: transparent !important;
 }
 
-/* =======================
-   URL BAR INPUT STYLING
-   Centered input field
-   ======================= */
+/* URL Input Styling */
 .urlbar-input-box {
   display: flex !important;
   justify-content: center !important;
@@ -170,15 +191,18 @@
 
 .urlbar-input {
   text-align: center !important;
-  transition: var(--hover-transition) !important;
+  transition: var(--transition-smooth) !important;
 }
 
-/* =======================
-   INTERACTIVE ELEMENTS
-   Unified button system with opacity control
-   ======================= */
+#urlbar[focused] .urlbar-input {
+  transform: scale(1.02);
+}
 
-/* Base button styling - low opacity by default */
+/* ===========================
+   🎛️ INTERACTIVE ELEMENTS
+   =========================== */
+
+/* Base Button System */
 #urlbar-container toolbarbutton,
 #urlbar toolbarbutton,
 #identity-permission-box,
@@ -188,24 +212,7 @@
 .expanded-button,
 .button,
 moz-button:not(.tools-overflow),
-#nav-bar toolbarbutton {
-  background: transparent !important;
-  opacity: var(--inactive-opacity) !important;
-  transition: var(--hover-transition) !important;
-  border-radius: var(--border-radius) !important;
-}
-
-/* URL bar specific buttons */
-#urlbar #identity-icon-box,
-#urlbar #identity-permission-box,
-#urlbar #tracking-protection-icon-container,
-#urlbar #star-button-box,
-#urlbar toolbarbutton {
-  opacity: var(--inactive-opacity) !important;
-  transition: var(--hover-transition) !important;
-}
-
-/* Sidebar buttons */
+#nav-bar toolbarbutton,
 #sidebar-switcher-target toolbarbutton,
 #sidebar-box .sidebar-placesTree toolbarbutton,
 .sidebar-placesTreechildren toolbarbutton,
@@ -213,15 +220,15 @@ moz-button:not(.tools-overflow),
 #sidebar-header toolbarbutton,
 .sidebar-panel toolbarbutton,
 #sidebar toolbarbutton {
+  background: transparent !important;
   opacity: var(--inactive-opacity) !important;
-  transition: var(--hover-transition) !important;
+  transition: var(--transition-smooth) !important;
+  border-radius: var(--border-radius) !important;
+  position: relative;
+  overflow: hidden;
 }
 
-/* =======================
-   HOVER EFFECTS
-   ======================= */
-
-/* General button hover */
+/* Hover Effects */
 #urlbar-container toolbarbutton:hover,
 #urlbar toolbarbutton:hover,
 #identity-permission-box:hover,
@@ -230,20 +237,7 @@ moz-button:not(.tools-overflow),
 #star-button-box:hover,
 .expanded-button:hover,
 moz-button:not(.tools-overflow):hover,
-#nav-bar toolbarbutton:hover {
-  opacity: 1 !important;
-}
-
-/* URL bar specific button hovers */
-#urlbar #identity-icon-box:hover,
-#urlbar #identity-permission-box:hover,
-#urlbar #tracking-protection-icon-container:hover,
-#urlbar #star-button-box:hover,
-#urlbar toolbarbutton:hover {
-  opacity: 1 !important;
-}
-
-/* Sidebar button hovers */
+#nav-bar toolbarbutton:hover,
 #sidebar-switcher-target toolbarbutton:hover,
 #sidebar-box .sidebar-placesTree toolbarbutton:hover,
 .sidebar-placesTreechildren toolbarbutton:hover,
@@ -251,10 +245,11 @@ moz-button:not(.tools-overflow):hover,
 #sidebar-header toolbarbutton:hover,
 .sidebar-panel toolbarbutton:hover,
 #sidebar toolbarbutton:hover {
-  opacity: 1 !important;
+  opacity: var(--hover-opacity) !important;
+  transform: translateY(-1px) scale(1.05) !important;
 }
 
-/* Icon color changes on hover */
+/* Icon Color */
 #nav-bar toolbarbutton:hover image,
 #urlbar toolbarbutton:hover image,
 #urlbar #identity-icon-box:hover image,
@@ -264,81 +259,117 @@ moz-button:not(.tools-overflow):hover,
   fill: var(--accent-color) !important;
 }
 
-/* =======================
-   ELEMENT VISIBILITY
-   Hide specific UI elements
-   ======================= */
+/* ===========================
+   🎭 ELEMENT VISIBILITY
+   =========================== */
 
-/* Hide identity box label text */
 #identity-icon-box label {
   display: none !important;
 }
 
-/* Hide sidebar splitter */
 #sidebar-tools-and-extensions-splitter {
   display: none !important;
 }
 
-/* =======================
-   WINDOW CONTROLS
-   Title bar button styling
-   ======================= */
+/* ===========================
+   🎮 WINDOW CONTROLS
+   =========================== */
 
-/* Normal window mode */
+/* Normal Window */
 #main-window:not([tabsintitlebar]) .titlebar-buttonbox toolbarbutton,
 #main-window[tabsintitlebar]:not([sizemode="maximized"]) .titlebar-buttonbox toolbarbutton {
-  opacity: 0.7 !important;
-  transition: var(--hover-transition) !important;
+  opacity: var(--semi-opacity) !important;
+  transition: var(--transition-smooth) !important;
 }
 
 #main-window:not([tabsintitlebar]) .titlebar-buttonbox toolbarbutton:hover,
 #main-window[tabsintitlebar]:not([sizemode="maximized"]) .titlebar-buttonbox toolbarbutton:hover {
-  opacity: 1 !important;
-  transform: scale(1.05) !important;
+  opacity: var(--hover-opacity) !important;
 }
 
-/* Maximized window mode */
+/* Maximized Window */
 #main-window[tabsintitlebar][sizemode="maximized"] .titlebar-buttonbox toolbarbutton,
 .titlebar-buttonbox toolbarbutton {
-  opacity: 1 !important;
-  transition: var(--hover-transition) !important;
+  opacity: var(--hover-opacity) !important;
+  transition: var(--transition-smooth) !important;
 }
 
 .titlebar-buttonbox toolbarbutton:hover {
-  transform: scale(1.05) !important;
+  transform: scale(1.08) !important;
 }
 
-/* =======================
-   ANIMATIONS & EFFECTS
-   ======================= */
+/* ===========================
+   ✨ ANIMATIONS & KEYFRAMES
+   =========================== */
 
-/* Dropdown slide animation */
+/* URL Bar Expand Animation */
+@keyframes urlbarExpand {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-5px);
+  }
+  70% {
+    transform: scale(1.02) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Tab Activation Animation */
+@keyframes tabActivate {
+  0% {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Dropdown Slide Animation */
 #urlbar-results {
-  animation: slideDown 0.3s cubic-bezier(0.5, 0, 0.3, 1) !important;
+  animation: slideDown 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
 }
 
 @keyframes slideDown {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-15px) scale(0.95);
   }
-  to {
+  60% {
+    transform: translateY(2px) scale(1.01);
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-/* Loading indicator transitions */
+/* Loading Indicator */
 .tab-throbber {
-  transition: var(--hover-transition) !important;
+  transition: var(--transition-smooth) !important;
 }
 
-/* =======================
-   SCROLLBAR STYLING
-   Custom scrollbar appearance
-   ======================= */
+.tab-throbber[busy] {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ===========================
+   📜 SCROLLBAR STYLING
+   =========================== */
 ::-webkit-scrollbar {
-  width: 8px !important;
+  width: 6px !important;
 }
 
 ::-webkit-scrollbar-track {
@@ -346,10 +377,12 @@ moz-button:not(.tools-overflow):hover,
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2) !important;
-  border-radius: 4px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 3px !important;
+  transition: var(--transition-quick) !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.4) !important;
+  background: var(--accent-color-subtle) !important;
+  transform: scaleX(1.2);
 }
