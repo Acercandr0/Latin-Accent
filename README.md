@@ -55,12 +55,15 @@ In `about:config`, set to **2**
 ```
 widget.windows.mica.toplevel-backdrop
 ```
-
+![Preview 1](./Previews/Firefox.png)
 ### 🪟 Transparency - Option 2
 Use [**Mica For Everyone**](https://github.com/MicaForEveryone/MicaForEveryone)
 
+![Preview 1](./Previews/MicaForEveryone.png)
 ### 🪟 Transparency - Option 3
 Use [**Translucent Windows (Windhawk mod)**](https://windhawk.net/mods/translucent-windows)
+
+![Preview 1](./Previews/prev1.png)
 
 ### 🧪 Optional – Custom New Tab Page with Bonjour
 To match the full vibe, install the [**Bonjour**](https://addons.mozilla.org/en-US/firefox/addon/bonjour-startpage/) extension and apply the custom config.
