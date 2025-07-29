@@ -265,7 +265,8 @@ toolbarpaletteitem > toolbarbutton,
 #fullscreen-button,
 #minimize-button,
 #restore-button,
-#close-button {
+#close-button,
+.button-background {
   background: transparent !important;
   opacity: var(--inactive-opacity) !important;
   transition: var(--transition-smooth) !important;
@@ -393,7 +394,8 @@ toolbarpaletteitem > toolbarbutton:hover,
 #fullscreen-button:hover,
 #minimize-button:hover,
 #restore-button:hover,
-#close-button:hover {
+#close-button:hover,
+.button-background:hover {
   opacity: var(--hover-opacity) !important;
   transform: scale(1.05) !important;
 }
