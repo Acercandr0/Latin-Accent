@@ -20,7 +20,7 @@
   
   /* ⚡ Animation System */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  --transition-bounce: all 0.45s cubic-bezier(0.65, -0.50, 0.260, 1.50) !important;
   --transition-quick: all 0.15s ease-out !important;
   
   /* 📐 Layout Constants */
@@ -28,7 +28,7 @@
   --border-radius-large: 8px;
   
   /* 🎨 Interface Colors */
-  --panel-bg: rgba(43, 43, 43, 0.95) !important;
+  --panel-bg: rgba(43, 43, 43, 0.98) !important;
   --panel-border: var(--accent-color) !important;
   --panel-text: white !important;
   --hover-bg: rgba(255, 255, 255, 0.08) !important;
@@ -44,6 +44,10 @@
   --arrowpanel-color: var(--panel-text) !important;
   --urlbar-open-background: var(--panel-bg) !important;
   --urlbar-open-color: var(--panel-text) !important;
+  
+  /* 🚫 Button Background Override */
+  --toolbarbutton-hover-background: transparent !important;
+  --toolbarbutton-active-background: transparent !important;
 }
 
 /* ===========================
@@ -90,7 +94,7 @@
   width: 40px !important;
 }
 
-/* Base Tab Styling */d
+/* Base Tab Styling */
 .tabbrowser-tab {
   transition: var(--transition-smooth) !important;
   position: relative;
@@ -142,7 +146,7 @@
    🔍 URL BAR SYSTEM
    =========================== */
 
-/* Closed State - Invisible */
+/* Closed State */
 #urlbar[breakout] > #urlbar-background,
 #urlbar-results,
 #urlbar-results .urlbarView,
@@ -151,7 +155,7 @@
   background: transparent !important;
 }
 
-/* Open State - Elegant Reveal */
+/* Open State */
 #urlbar[open] > #urlbar-background {
   background: var(--urlbar-open-background) !important;
   color: var(--urlbar-open-color) !important;
@@ -198,64 +202,230 @@
 }
 
 /* ===========================
-   🎛️ INTERACTIVE ELEMENTS
+   🎛️ UNIVERSAL BUTTON SYSTEM
    =========================== */
 
-/* Base Button System */
+/* 🔧 COMPREHENSIVE BUTTON SELECTOR */
+toolbarbutton,
+.toolbarbutton-1,
 #urlbar-container toolbarbutton,
 #urlbar toolbarbutton,
 #identity-permission-box,
 #identity-icon-box,
 #tracking-protection-icon-container,
 #star-button-box,
+#picture-in-picture-button,
+#reader-mode-button,
+#pageAction-urlbar-_testpilot-containers,
+#pageAction-panel-bookmark,
+#pageAction-panel-copyURL,
+#pageAction-panel-emailLink,
+#pageAction-panel-pinTab,
+#pageAction-panel-sendToDevice,
+#page-action-buttons > toolbarbutton,
+.urlbar-page-action,
 .expanded-button,
 .button,
 moz-button:not(.tools-overflow),
 #nav-bar toolbarbutton,
+#nav-bar-customization-target > toolbarbutton,
+#back-button,
+#forward-button,
+#reload-button,
+#stop-button,
+#home-button,
+#library-button,
+#fxa-toolbar-menu-button,
+#unified-extensions-button,
+#downloads-button,
+#bookmarks-menu-button,
+#history-panelmenu,
+#appMenu-button,
+#PanelUI-menu-button,
 #sidebar-switcher-target toolbarbutton,
 #sidebar-box .sidebar-placesTree toolbarbutton,
 .sidebar-placesTreechildren toolbarbutton,
 #sidebar-header .sidebar-close-button,
 #sidebar-header toolbarbutton,
 .sidebar-panel toolbarbutton,
-#sidebar toolbarbutton {
+#sidebar toolbarbutton,
+#PersonalToolbar toolbarbutton,
+.bookmark-item,
+#context-navigation toolbarbutton,
+#context-sep-navigation + toolbarbutton,
+.unified-extensions-item-action-button,
+.panel-subview-footer-button,
+toolbarpaletteitem > toolbarbutton,
+.chromeclass-toolbar-additional toolbarbutton,
+#addon-bar toolbarbutton,
+.tabs-newtab-button,
+#new-tab-button,
+.tab-close-button,
+.close-button,
+#fullscreen-button,
+#minimize-button,
+#restore-button,
+#close-button {
   background: transparent !important;
   opacity: var(--inactive-opacity) !important;
   transition: var(--transition-smooth) !important;
   border-radius: var(--border-radius) !important;
   position: relative;
   overflow: hidden;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* Hover Effects */
+/* 🚫 FORCE NO BACKGROUNDS */
+#navigator-toolbox toolbarbutton,
+#navigator-toolbox .toolbarbutton-1,
+#nav-bar > * > toolbarbutton,
+#nav-bar > toolbarbutton,
+#nav-bar toolbarbutton,
+#nav-bar .toolbarbutton-1,
+#back-button,
+#forward-button,
+#reload-button,
+#stop-button,
+#home-button,
+#library-button,
+#fxa-toolbar-menu-button,
+#unified-extensions-button,
+#downloads-button,
+#bookmarks-menu-button,
+#history-panelmenu,
+#appMenu-button,
+#PanelUI-menu-button,
+#sidebar-switcher-target toolbarbutton,
+.toolbarbutton-1 {
+  background-color: transparent !important;
+  background-image: none !important;
+  background: transparent !important;
+}
+
+#navigator-toolbox toolbarbutton:hover,
+#navigator-toolbox .toolbarbutton-1:hover,
+#nav-bar > * > toolbarbutton:hover,
+#nav-bar > toolbarbutton:hover,
+#nav-bar toolbarbutton:hover,
+#nav-bar .toolbarbutton-1:hover,
+#back-button:hover,
+#forward-button:hover,
+#reload-button:hover,
+#stop-button:hover,
+#home-button:hover,
+#library-button:hover,
+#fxa-toolbar-menu-button:hover,
+#unified-extensions-button:hover,
+#downloads-button:hover,
+#bookmarks-menu-button:hover,
+#history-panelmenu:hover,
+#appMenu-button:hover,
+#PanelUI-menu-button:hover,
+#sidebar-switcher-target toolbarbutton:hover,
+.toolbarbutton-1:hover,
+.toolbarbutton-1:hover:active {
+  background-color: transparent !important;
+  background-image: none !important;
+  background: transparent !important;
+
+}
+
+/* 🎯 HOVER EFFECTS */
+toolbarbutton:hover,
+.toolbarbutton-1:hover,
 #urlbar-container toolbarbutton:hover,
 #urlbar toolbarbutton:hover,
 #identity-permission-box:hover,
 #identity-icon-box:hover,
 #tracking-protection-icon-container:hover,
 #star-button-box:hover,
+#picture-in-picture-button:hover,
+#reader-mode-button:hover,
+#pageAction-urlbar-_testpilot-containers:hover,
+#pageAction-panel-bookmark:hover,
+#pageAction-panel-copyURL:hover,
+#pageAction-panel-emailLink:hover,
+#pageAction-panel-pinTab:hover,
+#pageAction-panel-sendToDevice:hover,
+#page-action-buttons > toolbarbutton:hover,
+.urlbar-page-action:hover,
 .expanded-button:hover,
+.button:hover,
 moz-button:not(.tools-overflow):hover,
 #nav-bar toolbarbutton:hover,
+#nav-bar-customization-target > toolbarbutton:hover,
+#back-button:hover,
+#forward-button:hover,
+#reload-button:hover,
+#stop-button:hover,
+#home-button:hover,
+#library-button:hover,
+#fxa-toolbar-menu-button:hover,
+#unified-extensions-button:hover,
+#downloads-button:hover,
+#bookmarks-menu-button:hover,
+#history-panelmenu:hover,
+#appMenu-button:hover,
+#PanelUI-menu-button:hover,
 #sidebar-switcher-target toolbarbutton:hover,
 #sidebar-box .sidebar-placesTree toolbarbutton:hover,
 .sidebar-placesTreechildren toolbarbutton:hover,
 #sidebar-header .sidebar-close-button:hover,
 #sidebar-header toolbarbutton:hover,
 .sidebar-panel toolbarbutton:hover,
-#sidebar toolbarbutton:hover {
+#sidebar toolbarbutton:hover,
+#PersonalToolbar toolbarbutton:hover,
+.bookmark-item:hover,
+#context-navigation toolbarbutton:hover,
+#context-sep-navigation + toolbarbutton:hover,
+.unified-extensions-item-action-button:hover,
+.panel-subview-footer-button:hover,
+toolbarpaletteitem > toolbarbutton:hover,
+.chromeclass-toolbar-additional toolbarbutton:hover,
+#addon-bar toolbarbutton:hover,
+.tabs-newtab-button:hover,
+#new-tab-button:hover,
+.tab-close-button:hover,
+.close-button:hover,
+#fullscreen-button:hover,
+#minimize-button:hover,
+#restore-button:hover,
+#close-button:hover {
   opacity: var(--hover-opacity) !important;
-  transform: translateY(-1px) scale(1.05) !important;
+  transform: scale(1.05) !important;
 }
 
-/* Icon Color */
+/* 🎨 ICON COLOR CHANGE ON HOVER */
+toolbarbutton:hover image,
+.toolbarbutton-1:hover image,
 #nav-bar toolbarbutton:hover image,
 #urlbar toolbarbutton:hover image,
 #urlbar #identity-icon-box:hover image,
 #urlbar #identity-permission-box:hover image,
 #urlbar #tracking-protection-icon-container:hover image,
-#urlbar #star-button-box:hover image {
+#urlbar #star-button-box:hover image,
+#urlbar #picture-in-picture-button:hover image,
+#urlbar #reader-mode-button:hover image,
+.urlbar-page-action:hover image,
+#sidebar toolbarbutton:hover image,
+#PersonalToolbar toolbarbutton:hover image,
+.bookmark-item:hover image,
+toolbarpaletteitem > toolbarbutton:hover image,
+.panel-subview-footer-button:hover image {
   fill: var(--accent-color) !important;
+  filter: none !important;
+}
+
+/* 🌟 SPECIAL STATES */
+toolbarbutton[checked="true"],
+toolbarbutton[open="true"],
+.toolbarbutton-1[checked="true"],
+.toolbarbutton-1[open="true"],
+#downloads-button[attention="true"],
+#library-button[attention="true"] {
+  opacity: var(--hover-opacity) !important;
+  background: var(--accent-color-subtle) !important;
 }
 
 /* ===========================
@@ -270,6 +440,10 @@ moz-button:not(.tools-overflow):hover,
   display: none !important;
 }
 
+#forward-button[disabled="true"] {
+  display: none !important;
+}
+
 /* ===========================
    🎮 WINDOW CONTROLS
    =========================== */
@@ -278,24 +452,36 @@ moz-button:not(.tools-overflow):hover,
 #main-window:not([tabsintitlebar]) .titlebar-buttonbox toolbarbutton,
 #main-window[tabsintitlebar]:not([sizemode="maximized"]) .titlebar-buttonbox toolbarbutton {
   opacity: var(--semi-opacity) !important;
+  transform: scale(0.9) !important;
   transition: var(--transition-smooth) !important;
+  fill: currentColor !important;
+  color: inherit !important;
 }
 
+/* Hover - Normal Window */
 #main-window:not([tabsintitlebar]) .titlebar-buttonbox toolbarbutton:hover,
 #main-window[tabsintitlebar]:not([sizemode="maximized"]) .titlebar-buttonbox toolbarbutton:hover {
   opacity: var(--hover-opacity) !important;
+  transform: scale(1.1) !important;
+  color: var(--accent-color) !important;
 }
 
 /* Maximized Window */
 #main-window[tabsintitlebar][sizemode="maximized"] .titlebar-buttonbox toolbarbutton,
 .titlebar-buttonbox toolbarbutton {
   opacity: var(--hover-opacity) !important;
+  transform: scale(0.9) !important;
   transition: var(--transition-smooth) !important;
+  fill: currentColor !important;
+  color: inherit !important;
 }
 
+/* Hover - Maximized Window */
 .titlebar-buttonbox toolbarbutton:hover {
-  transform: scale(1.08) !important;
+  transform: scale(1.1) !important;
+  color: var(--accent-color) !important;
 }
+
 
 /* ===========================
    ✨ ANIMATIONS & KEYFRAMES
@@ -364,24 +550,14 @@ moz-button:not(.tools-overflow):hover,
   50% { opacity: 0.6; }
 }
 
-/* ===========================
-   📜 SCROLLBAR STYLING
-   =========================== */
-::-webkit-scrollbar {
-  width: 6px !important;
+/* Button Press Animation */
+@keyframes buttonPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1.05); }
 }
 
-::-webkit-scrollbar-track {
-  background: transparent !important;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15) !important;
-  border-radius: 3px !important;
-  transition: var(--transition-quick) !important;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color-subtle) !important;
-  transform: scaleX(1.2);
+toolbarbutton:active,
+.toolbarbutton-1:active {
+  animation: buttonPress 0.15s ease-out !important;
 }
