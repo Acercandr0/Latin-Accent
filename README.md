@@ -24,12 +24,16 @@ Latin Accent is a custom Firefox theme for Windows that leverages your system's 
 </table>
 
 ### 🛠 Installation
-1. Open `about:profiles` in Firefox.
-2. Locate the **Root Directory** of your active profile and open it.
-3. Copy the `chrome` folder (from this repo) into that directory.  
-   It must contain:
-   - `userChrome.css`
-   - `userContent.css`
+
+1.  Open **`about:profiles`** in Firefox.
+2.  Find the **Root Directory** of your active profile and open it.
+3.  Navigate to the **`chrome`** folder. If the folder doesn't exist, create it.
+4.  Copy the **`userChrome.css`** and **`userContent.css`** files from this repository into the `chrome` folder.
+
+Your `chrome` folder should now contain the following files:
+
+* `userChrome.css`
+* `userContent.css`
 
 ### ⚙️ Enable Custom CSS in Firefox
 Go to `about:config` and set the following preference to **true**:
