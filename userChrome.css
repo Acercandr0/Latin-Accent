@@ -202,12 +202,99 @@
 }
 
 /* ===========================
+   📚 BOOKMARKS BAR FIX
+   =========================== */
+
+/* Personal Toolbar (Bookmarks Bar) */
+#PersonalToolbar {
+  background: transparent !important;
+  border: none !important;
+  padding: 2px 5px !important;
+}
+
+/* Bookmark Items Container */
+#PlacesToolbarItems {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+}
+
+/* Individual Bookmark Items */
+.bookmark-item {
+  background: transparent !important;
+  border: none !important;
+  border-radius: var(--border-radius) !important;
+  opacity: var(--inactive-opacity) !important;
+  transition: var(--transition-smooth) !important;
+  padding: 4px 8px !important;
+  margin: 0 1px !important;
+  min-height: 24px !important;
+  max-height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  /* Prevent size changes */
+  transform-origin: center !important;
+  flex-shrink: 0 !important;
+}
+
+/* Bookmark Icons */
+.bookmark-item .toolbarbutton-icon {
+  width: 16px !important;
+  height: 16px !important;
+  margin-right: 4px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Bookmark Text */
+.bookmark-item .toolbarbutton-text {
+  font-size: 12px !important;
+  max-width: 120px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* Bookmark Hover - Only opacity and subtle effects */
+.bookmark-item:hover {
+  opacity: var(--hover-opacity) !important;
+  background: var(--hover-bg) !important;
+  /* Remove scaling to prevent size issues */
+  transform: none !important;
+}
+
+/* Bookmark Icon Color on Hover */
+.bookmark-item:hover .toolbarbutton-icon {
+  fill: var(--accent-color) !important;
+}
+
+/* Bookmarks Chevron Button */
+#PlacesChevron {
+  background: transparent !important;
+  border: none !important;
+  opacity: var(--inactive-opacity) !important;
+  transition: var(--transition-smooth) !important;
+  min-width: 20px !important;
+  max-width: 20px !important;
+  margin-left: 5px !important;
+}
+
+#PlacesChevron:hover {
+  opacity: var(--hover-opacity) !important;
+  background: var(--hover-bg) !important;
+  transform: none !important;
+}
+
+/* ===========================
    🎛️ UNIVERSAL BUTTON SYSTEM
    =========================== */
 
 /* 🔧 COMPREHENSIVE BUTTON SELECTOR */
-toolbarbutton,
-.toolbarbutton-1,
+toolbarbutton:not(.bookmark-item),
+.toolbarbutton-1:not(.bookmark-item),
 #urlbar-container toolbarbutton,
 #urlbar toolbarbutton,
 #identity-permission-box,
@@ -227,8 +314,8 @@ toolbarbutton,
 .expanded-button,
 .button,
 moz-button:not(.tools-overflow),
-#nav-bar toolbarbutton,
-#nav-bar-customization-target > toolbarbutton,
+#nav-bar toolbarbutton:not(.bookmark-item),
+#nav-bar-customization-target > toolbarbutton:not(.bookmark-item),
 #back-button,
 #forward-button,
 #reload-button,
@@ -249,8 +336,6 @@ moz-button:not(.tools-overflow),
 #sidebar-header toolbarbutton,
 .sidebar-panel toolbarbutton,
 #sidebar toolbarbutton,
-#PersonalToolbar toolbarbutton,
-.bookmark-item,
 #context-navigation toolbarbutton,
 #context-sep-navigation + toolbarbutton,
 .unified-extensions-item-action-button,
@@ -278,12 +363,12 @@ toolbarpaletteitem > toolbarbutton,
 }
 
 /* 🚫 FORCE NO BACKGROUNDS */
-#navigator-toolbox toolbarbutton,
-#navigator-toolbox .toolbarbutton-1,
-#nav-bar > * > toolbarbutton,
-#nav-bar > toolbarbutton,
-#nav-bar toolbarbutton,
-#nav-bar .toolbarbutton-1,
+#navigator-toolbox toolbarbutton:not(.bookmark-item),
+#navigator-toolbox .toolbarbutton-1:not(.bookmark-item),
+#nav-bar > * > toolbarbutton:not(.bookmark-item),
+#nav-bar > toolbarbutton:not(.bookmark-item),
+#nav-bar toolbarbutton:not(.bookmark-item),
+#nav-bar .toolbarbutton-1:not(.bookmark-item),
 #back-button,
 #forward-button,
 #reload-button,
@@ -298,19 +383,19 @@ toolbarpaletteitem > toolbarbutton,
 #appMenu-button,
 #PanelUI-menu-button,
 #sidebar-switcher-target toolbarbutton,
-.toolbarbutton-1,
+.toolbarbutton-1:not(.bookmark-item),
 .button-background {
   background-color: transparent !important;
   background-image: none !important;
   background: transparent !important;
 }
 
-#navigator-toolbox toolbarbutton:hover,
-#navigator-toolbox .toolbarbutton-1:hover,
-#nav-bar > * > toolbarbutton:hover,
-#nav-bar > toolbarbutton:hover,
-#nav-bar toolbarbutton:hover,
-#nav-bar .toolbarbutton-1:hover,
+#navigator-toolbox toolbarbutton:not(.bookmark-item):hover,
+#navigator-toolbox .toolbarbutton-1:not(.bookmark-item):hover,
+#nav-bar > * > toolbarbutton:not(.bookmark-item):hover,
+#nav-bar > toolbarbutton:not(.bookmark-item):hover,
+#nav-bar toolbarbutton:not(.bookmark-item):hover,
+#nav-bar .toolbarbutton-1:not(.bookmark-item):hover,
 #back-button:hover,
 #forward-button:hover,
 #reload-button:hover,
@@ -325,18 +410,17 @@ toolbarpaletteitem > toolbarbutton,
 #appMenu-button:hover,
 #PanelUI-menu-button:hover,
 #sidebar-switcher-target toolbarbutton:hover,
-.toolbarbutton-1:hover,
-.toolbarbutton-1:hover:active,
+.toolbarbutton-1:not(.bookmark-item):hover,
+.toolbarbutton-1:not(.bookmark-item):hover:active,
 .button-background:hover {
   background-color: transparent !important;
   background-image: none !important;
   background: transparent !important;
-
 }
 
 /* 🎯 HOVER EFFECTS */
-toolbarbutton:hover,
-.toolbarbutton-1:hover,
+toolbarbutton:not(.bookmark-item):hover,
+.toolbarbutton-1:not(.bookmark-item):hover,
 #urlbar-container toolbarbutton:hover,
 #urlbar toolbarbutton:hover,
 #identity-permission-box:hover,
@@ -356,8 +440,8 @@ toolbarbutton:hover,
 .expanded-button:hover,
 .button:hover,
 moz-button:not(.tools-overflow):hover,
-#nav-bar toolbarbutton:hover,
-#nav-bar-customization-target > toolbarbutton:hover,
+#nav-bar toolbarbutton:not(.bookmark-item):hover,
+#nav-bar-customization-target > toolbarbutton:not(.bookmark-item):hover,
 #back-button:hover,
 #forward-button:hover,
 #reload-button:hover,
@@ -378,8 +462,6 @@ moz-button:not(.tools-overflow):hover,
 #sidebar-header toolbarbutton:hover,
 .sidebar-panel toolbarbutton:hover,
 #sidebar toolbarbutton:hover,
-#PersonalToolbar toolbarbutton:hover,
-.bookmark-item:hover,
 #context-navigation toolbarbutton:hover,
 #context-sep-navigation + toolbarbutton:hover,
 .unified-extensions-item-action-button:hover,
@@ -401,9 +483,9 @@ toolbarpaletteitem > toolbarbutton:hover,
 }
 
 /* 🎨 ICON COLOR CHANGE ON HOVER */
-toolbarbutton:hover image,
-.toolbarbutton-1:hover image,
-#nav-bar toolbarbutton:hover image,
+toolbarbutton:not(.bookmark-item):hover image,
+.toolbarbutton-1:not(.bookmark-item):hover image,
+#nav-bar toolbarbutton:not(.bookmark-item):hover image,
 #urlbar toolbarbutton:hover image,
 #urlbar #identity-icon-box:hover image,
 #urlbar #identity-permission-box:hover image,
@@ -413,8 +495,6 @@ toolbarbutton:hover image,
 #urlbar #reader-mode-button:hover image,
 .urlbar-page-action:hover image,
 #sidebar toolbarbutton:hover image,
-#PersonalToolbar toolbarbutton:hover image,
-.bookmark-item:hover image,
 toolbarpaletteitem > toolbarbutton:hover image,
 .panel-subview-footer-button:hover image {
   fill: var(--accent-color) !important;
@@ -424,14 +504,14 @@ toolbarpaletteitem > toolbarbutton:hover image,
 .button-background:hover {
   & img {
     fill: var(--accent-color) !important;
-}
+  }
 }
 
 /* 🌟 SPECIAL STATES */
-toolbarbutton[checked="true"],
-toolbarbutton[open="true"],
-.toolbarbutton-1[checked="true"],
-.toolbarbutton-1[open="true"],
+toolbarbutton[checked="true"]:not(.bookmark-item),
+toolbarbutton[open="true"]:not(.bookmark-item),
+.toolbarbutton-1[checked="true"]:not(.bookmark-item),
+.toolbarbutton-1[open="true"]:not(.bookmark-item),
 #downloads-button[attention="true"],
 #library-button[attention="true"] {
   opacity: var(--hover-opacity) !important;
@@ -491,7 +571,6 @@ toolbarbutton[open="true"],
   transform: scale(1.1) !important;
   color: var(--accent-color) !important;
 }
-
 
 /* ===========================
    ✨ ANIMATIONS & KEYFRAMES
@@ -567,7 +646,7 @@ toolbarbutton[open="true"],
   100% { transform: scale(1.05); }
 }
 
-toolbarbutton:active,
-.toolbarbutton-1:active {
+toolbarbutton:not(.bookmark-item):active,
+.toolbarbutton-1:not(.bookmark-item):active {
   animation: buttonPress 0.15s ease-out !important;
 }
