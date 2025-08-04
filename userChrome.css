@@ -90,6 +90,20 @@
   width: 1px !important;
 }
 
+/* Maximized Window - Enhanced Left Spacing */
+#main-window[sizemode="maximized"] .titlebar-spacer[type="pre-tabs"] {
+  width: 8px !important;
+}
+
+/* Alternative approach for maximized window tab spacing */
+#main-window[sizemode="maximized"] #TabsToolbar {
+  padding-left: 7px !important;
+}
+
+#main-window[sizemode="maximized"] .tabbrowser-tabs {
+  margin-left: 0 !important;
+}
+
 .titlebar-spacer[type="post-tabs"] {
   width: 40px !important;
 }
@@ -165,21 +179,27 @@
   animation: urlbarExpand 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Search Results */
+/* Search Results Container */
 #urlbar[open] #urlbar-results,
-#urlbar[open] #urlbar-results .urlbarView,
+#urlbar[open] #urlbar-results .urlbarView {
+  background: transparent !important;
+}
+
 #urlbar[open] #urlbar-results .urlbarView-body {
   background: transparent !important;
 }
 
+/* Search Result Items */
 #urlbar-results .urlbarView-row {
   transition: var(--transition-quick) !important;
   border-radius: var(--border-radius) !important;
+  margin-right: 8px !important;
 }
 
 #urlbar-results .urlbarView-row:hover {
   background: var(--hover-bg) !important;
   transform: translateX(4px);
+  margin-right: 8px !important;
 }
 
 #urlbar-searchmode-switcher {
