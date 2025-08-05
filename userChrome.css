@@ -1,5 +1,5 @@
 /* ===================================================================
-   LATIN ACCENT - FIREFOX DARK & TRANSPARENT THEME
+   LATIN ACCENT - FIREFOX TRANSPARENT THEME
    Made with cariño by Acercandr0
    =================================================================== */
 
@@ -692,3 +692,4 @@ toolbarbutton:not(.bookmark-item):active,
 .toolbarbutton-1:not(.bookmark-item):active {
   animation: buttonPress 0.15s ease-out !important;
 }
+
