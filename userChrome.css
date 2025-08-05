@@ -48,6 +48,24 @@
   /* 🚫 Button Background Override */
   --toolbarbutton-hover-background: transparent !important;
   --toolbarbutton-active-background: transparent !important;
+
+  /* Removal of the border on the sidebar (when expanding on hover) */
+
+:root[sidebar-expand-on-hover] {
+  & #sidebar-main {
+    &[sidebar-launcher-expanded], &[sidebar-ongoing-animations]:not([sidebar-launcher-expanded]) {
+      &:not([sidebar-positionend]) {
+        border-inline-end: none !important;
+      }
+    }
+  }
+}
+}
+
+/* titlebar button container spacing */
+
+@media (-moz-platform: linux), (-moz-os-version: linux) {
+  :root .titlebar-buttonbox {margin-right: 5px !important;}
 }
 
 /* ===========================
