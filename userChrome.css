@@ -572,6 +572,10 @@ toolbarbutton[open="true"]:not(.bookmark-item),
   display: none !important;
 }
 
+toolbarbutton[label="Bookmarks toolbar items"] {
+  display: none !important;
+}
+
 /* ===========================
    🎮 WINDOW CONTROLS
    =========================== */
