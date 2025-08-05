@@ -1,7 +1,7 @@
-/* =======================
+/* ===================================================================
    LATIN ACCENT - FIREFOX TRANSPARENT THEME
    Made with cariño by Acercandr0
-   ======================= */
+   =================================================================== */
 
 @-moz-document url("about:home"), url("about:newtab"), url("about:blank") {
   html,
@@ -9,7 +9,6 @@
   #root,
   .outer-wrapper,
   main,
-  .customize-menu,
   .discovery-stream,
   .ds-layout,
   .sections-list,
@@ -21,4 +20,81 @@
     box-shadow: none !important;
     filter: none !important;
     border: none !important;
+  }
+
+  /* ===========================
+     🎯 TOP SITES
+     =========================== */
+  
+  /* Remove ALL backgrounds from top sites */
+  .top-sites .top-site-outer,
+  .top-sites .top-site-inner,
+  .top-site-outer .tile,
+  .tile,
+  .shortcuts-refresh .top-sites-list .top-site-outer .tile,
+  .shortcuts-refresh .top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) .tile {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Only opacity changes on hover */
+  .top-sites .top-site-outer {
+    opacity: 0.3 !important;
+    transition: opacity 0.3s ease !important;
+  }
+
+  .top-sites .top-site-outer:hover {
+    opacity: 1 !important;
+  }
+
+  /* Force transparent background for topsites section */
+  .top-sites {
+    --newtab-background-color-secondary: transparent !important;
+  }
+
+  /* ===========================
+     🛠️  CUSTOMIZE MENU FIX
+     =========================== */
+  
+  /* Restore proper background for customize menu */
+  .customize-menu,
+  .customize-menu.customize-animate-enter-done {
+    background: var(--newtab-background-color) !important;
+    background-color: var(--newtab-background-color) !important;
+  }
+
+  /* Ensure customize menu has proper styling */
+  .customize-menu {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0px !important;
+  }
+
+  /* Fix text visibility in customize menu */
+  .customize-menu .section-title,
+  .customize-menu .section-disclaimer,
+  .customize-menu .personalize-button,
+  .customize-menu label,
+  .customize-menu input,
+  .customize-menu button {
+    color: var(--newtab-text-primary-color) !important }
+}
+
+  /* ===========================
+     🎭  HIDE ELEMENTS
+     =========================== */
+
+  /* Recent Activity */
+.body-wrapper.on .section-title,
+.body-wrapper.on .sections-list .section:last-of-type,
+.body-wrapper.on .topics {
+  display: none !important;
+}
+
+  /* Search bar */
+  .search-wrapper .search-inner-wrapper {
+  display: none !important;
   }

@@ -175,6 +175,117 @@
 }
 
 /* ===========================
+   📁 TAB GROUPS STYLING
+   =========================== */
+
+/* Tab group line */
+.tab-group-line {
+  max-height: 1px !important;
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 10%,
+    var(--tab-group-color) 45%,
+    var(--tab-group-color) 55%,
+    transparent 90%,
+    transparent 100%
+  ) !important;
+  background-color: transparent !important;
+}
+
+/* Tab group label container */
+.tab-group-label-container {
+  #tabbrowser-tabs:is([orient="horizontal"], [orient="vertical"]:not([expanded])) tab-group:not([collapsed]) > &::after {
+    content: '' !important;
+    display: block !important;
+    height: 1px !important;
+    background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 10%,
+      var(--tab-group-color) 45%,
+      var(--tab-group-color) 55%,
+      transparent 90%,
+      transparent 100%
+    ) !important;
+    background-color: transparent !important;
+  }
+}
+
+/* 🔠 Label text */
+.tab-group-label {
+  text-transform: uppercase !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.5px !important;
+  color: color-mix(in srgb, var(--tab-group-color) 70%, white 30%) !important;
+  background-color: transparent !important;
+  transition: var(--transition-smooth) !important;
+  outline: none !important;
+}
+
+/* 🌟 Label hover effect with rounded corners and padding */
+.tab-group-label-container:hover .tab-group-label {
+  background-color: color-mix(in srgb, var(--tab-group-color) 25%, transparent) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 8px !important;
+  color: white !important;
+  opacity: var(--hover-opacity) !important;
+}
+
+/* 🎯 Open group - active tab group label */
+tab-group[selected] > .tab-group-label-container .tab-group-label {
+  opacity: 1 !important;
+  background-color: var(--accent-color-subtle) !important;
+  color: var(--accent-color) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 2px !important;
+}
+
+
+/* ===========================
+🔊 AUDIO TAB INDICATORS
+=========================== */
+
+/* 🔊 Sound playing (not muted) */
+.tab-audio-button[soundplaying]:not([muted]) {
+  background-image: url("chrome://global/skin/media/audio.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  -moz-context-properties: fill, stroke !important;
+  fill: currentColor !important;
+  opacity: 0.6 !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  padding-right: 4px !important;
+  margin-inline-start: 4px !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: block !important;
+  transform-origin: center;
+}
+
+/* 🔇 Muted tab */
+.tab-audio-button[muted] {
+  background-image: url("chrome://global/skin/media/audio-muted.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  -moz-context-properties: fill, stroke !important;
+  fill: var(--accent-color) !important;
+  opacity: 0.8 !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  padding-right: 4px !important;
+  margin-inline-start: 4px !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: block !important;
+}
+
+/* ===========================
    🔍 URL BAR SYSTEM
    =========================== */
 
@@ -688,8 +799,8 @@ toolbarbutton[label="Bookmarks toolbar items"] {
   100% { transform: scale(1.05); }
 }
 
+/* Bookmark Button Animation */
 toolbarbutton:not(.bookmark-item):active,
 .toolbarbutton-1:not(.bookmark-item):active {
   animation: buttonPress 0.15s ease-out !important;
 }
-
