@@ -2,6 +2,13 @@ body {
   background: transparent !important;
 }
 
+#bookmarks_container,
+#bookmarks,
+#element-mover,
+.move-overlay {
+  backdrop-filter: none !important;
+}
+
 h1.digital {
   display: flex;
   flex-direction: row;
