@@ -9,7 +9,7 @@
   --chrome-content-separator-color: transparent !important;
   --toolbar-bgcolor: transparent !important;
   
-  /* 🌈 Dynamic Color System */
+  /* 🌈 Adaptive Color System */
   --accent-color: color-mix(in srgb, AccentColor 100%, transparent) !important;
   --accent-color-subtle: color-mix(in srgb, AccentColor 30%, transparent) !important;
   
@@ -27,11 +27,12 @@
   --border-radius: 5px;
   --border-radius-large: 7px;
   
-  /* 🎨 Interface Colors */
-  --panel-bg: rgba(43, 43, 43, 0.98) !important;
+  /* 🎨 Adaptive Interface Colors - Light/Dark aware */
+  --base-bg: light-dark(rgb(245, 245, 245), rgb(27, 27, 27));
+  --panel-bg: color-mix(in srgb, var(--accent-color) 7%, var(--base-bg) 93%) !important;
   --panel-border: var(--accent-color) !important;
-  --panel-text: white !important;
-  --hover-bg: rgba(255, 255, 255, 0.08) !important;
+  --panel-text: light-dark(rgb(40, 40, 40), white) !important;
+  --hover-bg: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08)) !important;
   
   /* 🔍 Focus System */
   --focus-outline-color: var(--accent-color) !important;
@@ -50,7 +51,6 @@
   --toolbarbutton-active-background: transparent !important;
 
   /* Removal of the border on the sidebar (when expanding on hover) */
-
 :root[sidebar-expand-on-hover] {
   & #sidebar-main {
     &[sidebar-launcher-expanded], &[sidebar-ongoing-animations]:not([sidebar-launcher-expanded]) {
@@ -63,7 +63,6 @@
 }
 
 /* titlebar button container spacing */
-
 @media (-moz-platform: linux), (-moz-os-version: linux) {
   :root .titlebar-buttonbox {margin-right: 5px !important;}
 }
@@ -108,14 +107,9 @@
   width: 1px !important;
 }
 
-/* Maximized Window - Enhanced Left Spacing */
-#main-window[sizemode="maximized"] .titlebar-spacer[type="pre-tabs"] {
-  width: 8px !important;
-}
-
-/* Alternative approach for maximized window tab spacing */
+/* Mimized window tab spacing */
 #main-window[sizemode="maximized"] #TabsToolbar {
-  padding-left: 7px !important;
+  padding-left: 2px !important;
 }
 
 #main-window[sizemode="maximized"] .tabbrowser-tabs {
@@ -178,69 +172,67 @@
    📁 TAB GROUPS STYLING
    =========================== */
 
-/* Tab group line */
+/* Hide original underline */
 .tab-group-line {
-  max-height: 1px !important;
-  background-image: linear-gradient(
-    to right,
-    transparent 0%,
-    transparent 10%,
-    var(--tab-group-color) 45%,
-    var(--tab-group-color) 55%,
-    transparent 90%,
-    transparent 100%
-  ) !important;
-  background-color: transparent !important;
+  display: none !important;
 }
 
-/* Tab group label container */
+/* Hide label underline */
 .tab-group-label-container {
   #tabbrowser-tabs:is([orient="horizontal"], [orient="vertical"]:not([expanded])) tab-group:not([collapsed]) > &::after {
-    content: '' !important;
-    display: block !important;
-    height: 1px !important;
-    background-image: linear-gradient(
-      to right,
-      transparent 0%,
-      transparent 10%,
-      var(--tab-group-color) 45%,
-      var(--tab-group-color) 55%,
-      transparent 90%,
-      transparent 100%
-    ) !important;
-    background-color: transparent !important;
+    display: none !important;
   }
 }
 
-/* 🔠 Label text */
-.tab-group-label {
-  text-transform: uppercase !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.5px !important;
-  color: color-mix(in srgb, var(--tab-group-color) 70%, white 30%) !important;
-  background-color: transparent !important;
-  transition: var(--transition-smooth) !important;
-  outline: none !important;
+/* Group outline */
+tab-group:not([collapsed]) .tabbrowser-tab .tab-background {
+  outline: 1px solid var(--tab-group-color) !important;
+  outline-offset: -1px !important;
 }
 
-/* 🌟 Label hover effect with rounded corners and padding */
-.tab-group-label-container:hover .tab-group-label {
-  background-color: color-mix(in srgb, var(--tab-group-color) 25%, transparent) !important;
-  border-radius: var(--border-radius) !important;
+/* Inactive tabs inside group */
+tab-group:not([collapsed]) .tabbrowser-tab:not([selected]) .tab-background {
+  outline: 1px solid color-mix(in srgb, var(--tab-group-color) 30%, transparent) !important;
+  outline-offset: -1px !important;
+}
+
+/* Active group tab */
+tab-group:not([collapsed]) .tabbrowser-tab[selected="true"] .tab-background {
+  border: none !important;
+  outline: 1px solid var(--tab-group-color) !important;
+  outline-offset: -1px !important;
+}
+
+/* 🔠 Label text - inactive/closed state */
+.tab-group-label {
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
+  color: light-dark(#666666, #cccccc) !important;
+  background-color: transparent !important;
+  transition: var(--transition-smooth) !important;
+  outline: 1px solid var(--tab-group-color) !important;
+  outline-offset: -1px !important;
   padding: 8px !important;
-  color: white !important;
-  opacity: var(--hover-opacity) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+/* 🌟 Label hover effect */
+.tab-group-label-container:hover .tab-group-label {
+  color: light-dark(#333333, white) !important;
+  background-color: color-mix(in srgb, var(--tab-group-color) 35%, light-dark(white, black)) !important;
+  outline: 1px solid var(--tab-group-color) !important;
+  outline-offset: -1px !important;
 }
 
 /* 🎯 Open group - active tab group label */
 tab-group[selected] > .tab-group-label-container .tab-group-label {
   opacity: 1 !important;
-  background-color: var(--accent-color-subtle) !important;
-  color: var(--accent-color) !important;
-  border-radius: var(--border-radius) !important;
-  padding: 2px !important;
+  background-color: var(--tab-group-color) !important;
+  color: light-dark(white, black) !important;
+  font-weight: 600 !important;
+  outline: none !important;
 }
-
 
 /* ===========================
 🔊 AUDIO TAB INDICATORS
@@ -351,7 +343,7 @@ tab-group[selected] > .tab-group-label-container .tab-group-label {
 }
 
 /* ===========================
-   📚 BOOKMARKS BAR FIX
+   📚 BOOKMARKS BAR
    =========================== */
 
 /* Personal Toolbar (Bookmarks Bar) */
@@ -385,7 +377,6 @@ tab-group[selected] > .tab-group-label-container .tab-group-label {
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
-  /* Prevent size changes */
   transform-origin: center !important;
   flex-shrink: 0 !important;
 }
@@ -411,7 +402,6 @@ tab-group[selected] > .tab-group-label-container .tab-group-label {
 .bookmark-item:hover {
   opacity: var(--hover-opacity) !important;
   background: var(--hover-bg) !important;
-  /* Remove scaling to prevent size issues */
   transform: none !important;
 }
 
@@ -438,33 +428,12 @@ tab-group[selected] > .tab-group-label-container .tab-group-label {
 }
 
 /* ===========================
-   🎛️ UNIVERSAL BUTTON SYSTEM
+   🎛️ REFINED BUTTON SYSTEM
    =========================== */
 
-/* 🔧 COMPREHENSIVE BUTTON SELECTOR */
-toolbarbutton:not(.bookmark-item),
-.toolbarbutton-1:not(.bookmark-item),
-#urlbar-container toolbarbutton,
-#urlbar toolbarbutton,
-#identity-permission-box,
-#identity-icon-box,
-#tracking-protection-icon-container,
-#star-button-box,
-#picture-in-picture-button,
-#reader-mode-button,
-#pageAction-urlbar-_testpilot-containers,
-#pageAction-panel-bookmark,
-#pageAction-panel-copyURL,
-#pageAction-panel-emailLink,
-#pageAction-panel-pinTab,
-#pageAction-panel-sendToDevice,
-#page-action-buttons > toolbarbutton,
-.urlbar-page-action,
-.expanded-button,
-.button,
-moz-button:not(.tools-overflow),
-#nav-bar toolbarbutton:not(.bookmark-item),
-#nav-bar-customization-target > toolbarbutton:not(.bookmark-item),
+/* 🔧 COMPREHENSIVE BUTTON SELECTOR - keeping normal behavior for urlbar buttons */
+toolbarbutton:not(.bookmark-item):not([id*="identity"]):not([id*="tracking"]):not([id*="star"]):not([id*="picture"]):not([id*="reader"]),
+.toolbarbutton-1:not(.bookmark-item):not([id*="identity"]):not([id*="tracking"]):not([id*="star"]):not([id*="picture"]):not([id*="reader"]),
 #back-button,
 #forward-button,
 #reload-button,
@@ -496,10 +465,6 @@ toolbarpaletteitem > toolbarbutton,
 #new-tab-button,
 .tab-close-button,
 .close-button,
-#fullscreen-button,
-#minimize-button,
-#restore-button,
-#close-button,
 .button-background {
   background: transparent !important;
   opacity: var(--inactive-opacity) !important;
@@ -507,6 +472,31 @@ toolbarpaletteitem > toolbarbutton,
   border-radius: var(--border-radius) !important;
   position: relative;
   overflow: hidden;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Keep urlbar buttons with their normal transparent behavior */
+#urlbar-container toolbarbutton,
+#urlbar toolbarbutton,
+#identity-permission-box,
+#identity-icon-box,
+#tracking-protection-icon-container,
+#star-button-box,
+#picture-in-picture-button,
+#reader-mode-button,
+#pageAction-urlbar-_testpilot-containers,
+#pageAction-panel-bookmark,
+#pageAction-panel-copyURL,
+#pageAction-panel-emailLink,
+#pageAction-panel-pinTab,
+#pageAction-panel-sendToDevice,
+#page-action-buttons > toolbarbutton,
+.urlbar-page-action {
+  background: transparent !important;
+  opacity: var(--inactive-opacity) !important;
+  transition: var(--transition-smooth) !important;
+  border-radius: var(--border-radius) !important;
   border: none !important;
   box-shadow: none !important;
 }
@@ -567,28 +557,9 @@ toolbarpaletteitem > toolbarbutton,
   background: transparent !important;
 }
 
-/* 🎯 HOVER EFFECTS */
-toolbarbutton:not(.bookmark-item):hover,
-.toolbarbutton-1:not(.bookmark-item):hover,
-#urlbar-container toolbarbutton:hover,
-#urlbar toolbarbutton:hover,
-#identity-permission-box:hover,
-#identity-icon-box:hover,
-#tracking-protection-icon-container:hover,
-#star-button-box:hover,
-#picture-in-picture-button:hover,
-#reader-mode-button:hover,
-#pageAction-urlbar-_testpilot-containers:hover,
-#pageAction-panel-bookmark:hover,
-#pageAction-panel-copyURL:hover,
-#pageAction-panel-emailLink:hover,
-#pageAction-panel-pinTab:hover,
-#pageAction-panel-sendToDevice:hover,
-#page-action-buttons > toolbarbutton:hover,
-.urlbar-page-action:hover,
-.expanded-button:hover,
-.button:hover,
-moz-button:not(.tools-overflow):hover,
+/* 🎯 REFINED HOVER EFFECTS - subtle scale only */
+toolbarbutton:not(.bookmark-item):not([id*="identity"]):not([id*="tracking"]):not([id*="star"]):not([id*="picture"]):not([id*="reader"]):hover,
+.toolbarbutton-1:not(.bookmark-item):not([id*="identity"]):not([id*="tracking"]):not([id*="star"]):not([id*="picture"]):not([id*="reader"]):hover,
 #nav-bar toolbarbutton:not(.bookmark-item):hover,
 #nav-bar-customization-target > toolbarbutton:not(.bookmark-item):hover,
 #back-button:hover,
@@ -622,12 +593,23 @@ toolbarpaletteitem > toolbarbutton:hover,
 #new-tab-button:hover,
 .tab-close-button:hover,
 .close-button:hover,
-#fullscreen-button:hover,
-#minimize-button:hover,
-#restore-button:hover,
-#close-button:hover,
 .button-background:hover {
   opacity: var(--hover-opacity) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Keep urlbar buttons transparent on hover */
+#urlbar-container toolbarbutton:hover,
+#urlbar toolbarbutton:hover,
+#identity-permission-box:hover,
+#identity-icon-box:hover,
+#tracking-protection-icon-container:hover,
+#star-button-box:hover,
+#picture-in-picture-button:hover,
+#reader-mode-button:hover,
+.urlbar-page-action:hover {
+  opacity: var(--hover-opacity) !important;
+  background: transparent !important;
   transform: scale(1.05) !important;
 }
 
@@ -701,11 +683,11 @@ toolbarbutton[label="Bookmarks toolbar items"] {
   color: inherit !important;
 }
 
-/* Hover - Normal Window */
+/* Hover - Normal Window - subtle scaling */
 #main-window:not([tabsintitlebar]) .titlebar-buttonbox toolbarbutton:hover,
 #main-window[tabsintitlebar]:not([sizemode="maximized"]) .titlebar-buttonbox toolbarbutton:hover {
   opacity: var(--hover-opacity) !important;
-  transform: scale(1.1) !important;
+  transform: scale(1.05) !important;
   color: var(--accent-color) !important;
 }
 
@@ -719,9 +701,9 @@ toolbarbutton[label="Bookmarks toolbar items"] {
   color: inherit !important;
 }
 
-/* Hover - Maximized Window */
+/* Hover - Maximized Window - subtle scaling */
 .titlebar-buttonbox toolbarbutton:hover {
-  transform: scale(1.1) !important;
+  transform: scale(1.05) !important;
   color: var(--accent-color) !important;
 }
 
