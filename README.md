@@ -48,7 +48,7 @@ This allows Firefox to load your custom `userChrome.css` and `userContent.css`.
 In `about:config`, set the following preferences to **true**:
 
 ```
-layout.css.backdrop-filter.enabled
+browser.tabs.allow_transparent_browser
 widget.windows.mica
 gfx.webrender.all
 ```
