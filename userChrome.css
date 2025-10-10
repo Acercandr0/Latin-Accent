@@ -275,14 +275,10 @@ tab-group:not([collapsed]) .tabbrowser-tab[selected="true"] .tab-background {
    =========================== */
 
 /* Closed State - Force transparent background */
-#urlbar-background,
-.urlbar-background,
-#searchbar,
-#urlbar[breakout][breakout-extend] > #urlbar-background,
-#urlbar-results,
-#urlbar-results .urlbarView,
-#urlbar-results .urlbarView-body,
-#urlbar-results .urlbarView-row {
+#urlbar:not([open]) #urlbar-background,
+#urlbar:not([open]) .urlbar-background,
+#searchbar:not([open]),
+#urlbar[breakout][breakout-extend]:not([open]) > #urlbar-background {
   background: transparent !important;
   background-color: transparent !important;
   background-clip: border-box !important;
@@ -291,7 +287,7 @@ tab-group:not([collapsed]) .tabbrowser-tab[selected="true"] .tab-background {
 /* Open State - Updated selectors for new Firefox versions */
 #urlbar[open] > #urlbar-background,
 #urlbar[breakout][breakout-extend][open] > #urlbar-background,
-.urlbar-background[open] {
+#urlbar[open] .urlbar-background {
   background: var(--urlbar-open-background) !important;
   background-color: var(--panel-bg) !important;
   background-clip: border-box !important;
@@ -303,10 +299,18 @@ tab-group:not([collapsed]) .tabbrowser-tab[selected="true"] .tab-background {
   box-shadow: none !important;
 }
 
-/* Fix for urlbar input container */
-#urlbar-input-container {
+/* Fix for urlbar input container when closed */
+#urlbar:not([open]) #urlbar-input-container {
   background: transparent !important;
   background-color: transparent !important;
+}
+
+/* Search Results - always transparent background, panel shows behind */
+#urlbar-results,
+#urlbar-results .urlbarView,
+#urlbar-results .urlbarView-body,
+#urlbar-results .urlbarView-row {
+  background: transparent !important;
 }
 
 /* Search Results Container */
