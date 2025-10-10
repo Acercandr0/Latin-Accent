@@ -13,7 +13,7 @@
   --accent-color: color-mix(in srgb, AccentColor 100%, transparent) !important;
   --accent-color-subtle: color-mix(in srgb, AccentColor 30%, transparent) !important;
   
-  /* 👻 Opacity System */
+  /* 💻 Opacity System */
   --inactive-opacity: 0.3 !important;
   --hover-opacity: 1 !important;
   --semi-opacity: 0.7 !important;
@@ -27,12 +27,12 @@
   --border-radius: 5px;
   --border-radius-large: 7px;
 
-  /* 📏 Outline & Border System */
+  /* 🔍 Outline & Border System */
   --border-outline-width: 1px;
   
   /* 🎨 Adaptive Interface Colors - Light/Dark aware */
-  --base-bg: light-dark(rgb(245, 245, 245), rgb(27, 27, 27));
-  --panel-bg: color-mix(in srgb, var(--accent-color) 7%, var(--base-bg) 93%) !important;
+  --base-bg: light-dark(rgb(245, 245, 245), rgb(20, 20, 20));
+  --panel-bg: color-mix(in srgb, var(--accent-color) 1%, var(--base-bg) 99%) !important;
   --panel-border: var(--accent-color) !important;
   --panel-text: light-dark(rgb(40, 40, 40), white) !important;
   --hover-bg: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08)) !important;
@@ -103,8 +103,22 @@
   margin-left: 0 !important;
 }
 
-.titlebar-spacer[type="post-tabs"] {
-  width: 40px !important;
+/* Post-tabs spacer - Windows */
+@supports not (-moz-bool-pref: "widget.macos.titlebar-blend") {
+  .titlebar-spacer[type="post-tabs"] {
+    width: 40px !important;
+  }
+}
+
+/* Pre-tabs spacer - macOS */
+@supports (-moz-bool-pref: "widget.macos.titlebar-blend") {
+  .titlebar-spacer[type="pre-tabs"] {
+    width: 80px !important;
+  }
+  
+  .titlebar-spacer[type="post-tabs"] {
+    width: 1px !important;
+  }
 }
 
 /* Base Tab Styling */
@@ -156,7 +170,7 @@
 }
 
 /* ===========================
-   📁 TAB GROUPS STYLING
+   🏷️ TAB GROUPS STYLING
    =========================== */
 
 /* Hide original underline */
@@ -190,7 +204,7 @@ tab-group:not([collapsed]) .tabbrowser-tab[selected="true"] .tab-background {
   outline-offset: -1px !important;
 }
 
-/* 🔠 Label text - inactive/closed state */
+/* 🏷️ Label text - inactive/closed state */
 .tab-group-label {
   text-transform: uppercase !important;
   font-weight: 500 !important;
@@ -214,7 +228,7 @@ tab-group:not([collapsed]) .tabbrowser-tab[selected="true"] .tab-background {
 
 
 /* ===========================
-🔊 AUDIO TAB INDICATORS
+📊 AUDIO TAB INDICATORS
 =========================== */
 
 /* 🔊 Sound playing (not muted) */
@@ -260,28 +274,45 @@ tab-group:not([collapsed]) .tabbrowser-tab[selected="true"] .tab-background {
    🔍 URL BAR SYSTEM
    =========================== */
 
-/* Closed State */
-#urlbar[breakout] > #urlbar-background,
+/* Closed State - Force transparent background */
+#urlbar-background,
+.urlbar-background,
+#searchbar,
+#urlbar[breakout][breakout-extend] > #urlbar-background,
 #urlbar-results,
 #urlbar-results .urlbarView,
 #urlbar-results .urlbarView-body,
 #urlbar-results .urlbarView-row {
   background: transparent !important;
+  background-color: transparent !important;
+  background-clip: border-box !important;
 }
 
-/* Open State */
-#urlbar[open] > #urlbar-background {
+/* Open State - Updated selectors for new Firefox versions */
+#urlbar[open] > #urlbar-background,
+#urlbar[breakout][breakout-extend][open] > #urlbar-background,
+.urlbar-background[open] {
   background: var(--urlbar-open-background) !important;
+  background-color: var(--panel-bg) !important;
+  background-clip: border-box !important;
   color: var(--urlbar-open-color) !important;
   border: var(--border-outline-width) solid var(--accent-color) !important;
   border-radius: var(--border-radius-large) !important;
   margin: 1px !important;
   animation: urlbarExpand 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: none !important;
+}
+
+/* Fix for urlbar input container */
+#urlbar-input-container {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Search Results Container */
 #urlbar[open] #urlbar-results,
-#urlbar[open] #urlbar-results .urlbarView {
+#urlbar[open] #urlbar-results .urlbarView,
+#urlbar[breakout][breakout-extend][open] #urlbar-results {
   background: transparent !important;
 }
 
