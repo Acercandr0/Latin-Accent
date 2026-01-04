@@ -84,8 +84,5 @@ To match the full vibe, install the [**Bonjour**](https://addons.mozilla.org/en-
 - Some effects depend on OS-level features (e.g. Mica on Windows 11)
 - Transparency effects may vary depending on your system theme and hardware acceleration settings.
 
-### 🤝 Special thanks
-[**soulhotel**](https://github.com/soulhotel) for improvements for Linux KDE.
-
 ## 🧉 Made with cariño by [@Acercandr0](https://github.com/Acercandr0)
 Enjoy it. Fork it. Remix it. Make it yours.
